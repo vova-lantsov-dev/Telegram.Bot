@@ -56,37 +56,6 @@ namespace Telegram.Bot
         /// Occurs after receiving the response to an API request
         /// </summary>
         event EventHandler<ApiResponseEventArgs> ApiResponseReceived;
-
-        /// <summary>
-        /// Occurs when an <see cref="Update"/> is received.
-        /// </summary>
-        event EventHandler<UpdateEventArgs> OnUpdate;
-
-        /// <summary>
-        /// Occurs when a <see cref="Message"/> is received.
-        /// </summary>
-        event EventHandler<MessageEventArgs> OnMessage;
-
-        /// <summary>
-        /// Occurs when <see cref="Message"/> was edited.
-        /// </summary>
-        event EventHandler<MessageEventArgs> OnMessageEdited;
-
-        /// <summary>
-        /// Occurs when an <see cref="InlineQuery"/> is received.
-        /// </summary>
-        event EventHandler<InlineQueryEventArgs> OnInlineQuery;
-
-        /// <summary>
-        /// Occurs when a <see cref="ChosenInlineResult"/> is received.
-        /// </summary>
-        event EventHandler<ChosenInlineResultEventArgs> OnInlineResultChosen;
-
-        /// <summary>
-        /// Occurs when an <see cref="CallbackQuery"/> is received
-        /// </summary>
-        event EventHandler<CallbackQueryEventArgs> OnCallbackQuery;
-
         /// <summary>
         /// Occurs when an error occurs during the background update pooling.
         /// </summary>
