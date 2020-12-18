@@ -3,7 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
     <RootNamespace>Telegram.Bot</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Telegram.Bot</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
 
 </Project>

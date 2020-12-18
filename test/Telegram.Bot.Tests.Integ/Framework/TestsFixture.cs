@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -165,11 +164,6 @@ namespace Telegram.Bot.Tests.Integ.Framework
                 disableNotification: true,
                 cancellationToken: CancellationToken
             );
-
-#if DEBUG
-            BotClient.MakingApiRequest += OnMakingApiRequest;
-            BotClient.ApiResponseReceived += OnApiResponseReceived;
-#endif
         }
 
         private Task<Message> SendNotificationToChatAsync(
@@ -186,7 +180,7 @@ namespace Telegram.Bot.Tests.Integ.Framework
 
             string text = string.Format(textFormat, name);
 
-            chatId = chatId ?? SupergroupChat.Id;
+            chatId ??= SupergroupChat.Id;
             if (instructions != default)
             {
                 text += "\n\n" + string.Format(Constants.InstructionsMessageFormat, instructions);
@@ -241,49 +235,6 @@ namespace Telegram.Bot.Tests.Integ.Framework
             return allowedUserNames;
         }
 
-#if DEBUG
-// Disable "The variable ‘x’ is assigned but its value is never used":
-#pragma warning disable 219
-        // ReSharper disable NotAccessedVariable
-        // ReSharper disable RedundantAssignment
-        private void OnMakingApiRequest(object sender, ApiRequestEventArgs e)
-        {
-            bool hasContent;
-            string content;
-            string[] multipartContent;
-            if (e.HttpContent == null)
-            {
-                hasContent = false;
-            }
-            else if (e.HttpContent is MultipartFormDataContent multipartFormDataContent)
-            {
-                hasContent = true;
-                multipartContent = multipartFormDataContent
-                    .Select(c => c is StringContent
-                        ? $"{c.Headers}\n{c.ReadAsStringAsync().Result}"
-                        : c.Headers.ToString()
-                    )
-                    .ToArray();
-            }
-            else
-            {
-                hasContent = true;
-                content = e.HttpContent.ReadAsStringAsync().Result;
-            }
-
-            /* Debugging Hint: set breakpoints with conditions here in order to investigate the HTTP request values. */
-        }
-
-        // ReSharper disable UnusedVariable
-        private async void OnApiResponseReceived(object sender, ApiResponseEventArgs e)
-        {
-            string content = await e.ResponseMessage.Content.ReadAsStringAsync()
-                .ConfigureAwait(false);
-
-            /* Debugging Hint: set breakpoints with conditions here in order to investigate the HTTP response received. */
-        }
-#pragma warning restore 219
-#endif
         private static class Constants
         {
             public const string StartCollectionMessageFormat = "💬 Test Collection:\n*{0}*";

@@ -7,7 +7,6 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Telegram.Bot.Args;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Requests;
 using Telegram.Bot.Requests.Abstractions;
@@ -24,12 +23,10 @@ namespace Telegram.Bot
     /// <summary>
     /// A client to use the Telegram Bot API
     /// </summary>
-    public class TelegramBotClient : ITelegramBotClient
+    public sealed class TelegramBotClient : ITelegramBotClient
     {
         /// <inheritdoc/>
         public int BotId { get; }
-
-        private static readonly Update[] EmptyUpdates = { };
 
         private const string BaseUrl = "https://api.telegram.org/bot";
 
@@ -40,117 +37,6 @@ namespace Telegram.Bot
         private readonly string _token;
 
         private readonly HttpClient _httpClient;
-
-        #region Config Properties
-
-        /// <summary>
-        /// Timeout for requests
-        /// </summary>
-        public TimeSpan Timeout
-        {
-            get => _httpClient.Timeout;
-            set => _httpClient.Timeout = value;
-        }
-
-        /// <summary>
-        /// Indicates if receiving updates
-        /// </summary>
-        public bool IsReceiving { get; set; }
-
-        private CancellationTokenSource _receivingCancellationTokenSource;
-
-        /// <summary>
-        /// The current message offset
-        /// </summary>
-        public int MessageOffset { get; set; }
-
-        #endregion Config Properties
-
-        #region Events
-
-        /// <summary>
-        /// Occurs before sending a request to API
-        /// </summary>
-        public event EventHandler<ApiRequestEventArgs> MakingApiRequest;
-
-        /// <summary>
-        /// Occurs after receiving the response to an API request
-        /// </summary>
-        public event EventHandler<ApiResponseEventArgs> ApiResponseReceived;
-
-        /// <summary>
-        /// Raises the <see cref="OnUpdate" />, <see cref="OnMessage"/>, <see cref="OnInlineQuery"/>, <see cref="OnInlineResultChosen"/> and <see cref="OnCallbackQuery"/> events.
-        /// </summary>
-        /// <param name="e">The <see cref="UpdateEventArgs"/> instance containing the event data.</param>
-        protected virtual void OnUpdateReceived(UpdateEventArgs e)
-        {
-            OnUpdate?.Invoke(this, e);
-
-            switch (e.Update.Type)
-            {
-                case UpdateType.Message:
-                    OnMessage?.Invoke(this, e);
-                    break;
-
-                case UpdateType.InlineQuery:
-                    OnInlineQuery?.Invoke(this, e);
-                    break;
-
-                case UpdateType.ChosenInlineResult:
-                    OnInlineResultChosen?.Invoke(this, e);
-                    break;
-
-                case UpdateType.CallbackQuery:
-                    OnCallbackQuery?.Invoke(this, e);
-                    break;
-
-                case UpdateType.EditedMessage:
-                    OnMessageEdited?.Invoke(this, e);
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// Occurs when an <see cref="Update"/> is received.
-        /// </summary>
-        public event EventHandler<UpdateEventArgs> OnUpdate;
-
-        /// <summary>
-        /// Occurs when a <see cref="Message"/> is received.
-        /// </summary>
-        public event EventHandler<MessageEventArgs> OnMessage;
-
-        /// <summary>
-        /// Occurs when <see cref="Message"/> was edited.
-        /// </summary>
-        public event EventHandler<MessageEventArgs> OnMessageEdited;
-
-        /// <summary>
-        /// Occurs when an <see cref="InlineQuery"/> is received.
-        /// </summary>
-        public event EventHandler<InlineQueryEventArgs> OnInlineQuery;
-
-        /// <summary>
-        /// Occurs when a <see cref="ChosenInlineResult"/> is received.
-        /// </summary>
-        public event EventHandler<ChosenInlineResultEventArgs> OnInlineResultChosen;
-
-        /// <summary>
-        /// Occurs when an <see cref="CallbackQuery"/> is received
-        /// </summary>
-        public event EventHandler<CallbackQueryEventArgs> OnCallbackQuery;
-
-        /// <summary>
-        /// Occurs when an error occurs during the background update pooling.
-        /// </summary>
-        public event EventHandler<ReceiveErrorEventArgs> OnReceiveError;
-
-        /// <summary>
-        /// Occurs when an error occurs during the background update pooling.
-        /// </summary>
-        public event EventHandler<ReceiveGeneralErrorEventArgs> OnReceiveGeneralError;
-
-        #endregion
 
         /// <summary>
         /// Create a new <see cref="TelegramBotClient"/> instance.
@@ -201,12 +87,12 @@ namespace Telegram.Bot
             }
 
             _baseRequestUrl = $"{BaseUrl}{_token}/";
-            var httpClientHander = new HttpClientHandler
+            var httpClientHandler = new HttpClientHandler
             {
                 Proxy = webProxy,
                 UseProxy = true
             };
-            _httpClient = new HttpClient(httpClientHander);
+            _httpClient = new HttpClient(httpClientHandler);
         }
 
         #region Helpers
@@ -222,13 +108,6 @@ namespace Telegram.Bot
             {
                 Content = request.ToHttpContent()
             };
-
-            var reqDataArgs = new ApiRequestEventArgs
-            {
-                MethodName = request.MethodName,
-                HttpContent = httpRequest.Content,
-            };
-            MakingApiRequest?.Invoke(this, reqDataArgs);
 
             HttpResponseMessage httpResponse;
             try
@@ -246,14 +125,8 @@ namespace Telegram.Bot
 
             // required since user might be able to set new status code using following event arg
             var actualResponseStatusCode = httpResponse.StatusCode;
-            string responseJson = await httpResponse.Content.ReadAsStringAsync()
+            string responseJson = await httpResponse.Content.ReadAsStringAsync(cancellationToken)
                 .ConfigureAwait(false);
-
-            ApiResponseReceived?.Invoke(this, new ApiResponseEventArgs
-            {
-                ResponseMessage = httpResponse,
-                ApiRequestEventArgs = reqDataArgs
-            });
 
             switch (actualResponseStatusCode)
             {
@@ -299,90 +172,6 @@ namespace Telegram.Bot
                 when (e.ErrorCode == 401)
             {
                 return false;
-            }
-        }
-
-        /// <summary>
-        /// Start update receiving
-        /// </summary>
-        /// <param name="allowedUpdates">List the types of updates you want your bot to receive.</param>
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <exception cref="ApiRequestException"> Thrown if token is invalid</exception>
-        public void StartReceiving(UpdateType[] allowedUpdates = null,
-                                   CancellationToken cancellationToken = default)
-        {
-            _receivingCancellationTokenSource = new CancellationTokenSource();
-
-            cancellationToken.Register(() => _receivingCancellationTokenSource.Cancel());
-
-            ReceiveAsync(allowedUpdates, _receivingCancellationTokenSource.Token);
-        }
-
-#pragma warning disable AsyncFixer03 // Avoid fire & forget async void methods
-        private async void ReceiveAsync(
-            UpdateType[] allowedUpdates,
-            CancellationToken cancellationToken = default)
-        {
-            IsReceiving = true;
-            while (!cancellationToken.IsCancellationRequested)
-            {
-                var timeout = Convert.ToInt32(Timeout.TotalSeconds);
-                var updates = EmptyUpdates;
-
-                try
-                {
-                    updates = await GetUpdatesAsync(
-                        MessageOffset,
-                        timeout: timeout,
-                        allowedUpdates: allowedUpdates,
-                        cancellationToken: cancellationToken
-                    ).ConfigureAwait(false);
-                }
-                catch (OperationCanceledException)
-                {
-                }
-                catch (ApiRequestException apiException)
-                {
-                    OnReceiveError?.Invoke(this, apiException);
-                }
-                catch (Exception generalException)
-                {
-                    OnReceiveGeneralError?.Invoke(this, generalException);
-                }
-
-                try
-                {
-                    foreach (var update in updates)
-                    {
-                        OnUpdateReceived(new UpdateEventArgs(update));
-                        MessageOffset = update.Id + 1;
-                    }
-                }
-                catch
-                {
-                    IsReceiving = false;
-                    throw;
-                }
-            }
-
-            IsReceiving = false;
-        }
-#pragma warning restore AsyncFixer03 // Avoid fire & forget async void methods
-
-        /// <summary>
-        /// Stop update receiving
-        /// </summary>
-        public void StopReceiving()
-        {
-            try
-            {
-                _receivingCancellationTokenSource.Cancel();
-            }
-            catch (WebException)
-            {
-            }
-            catch (TaskCanceledException)
-            {
             }
         }
 
