@@ -1,5 +1,4 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using System.Text.Json;
 using Telegram.Bot.Requests;
 using Xunit;
 
@@ -15,7 +14,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 Offset = 12345
             };
 
-            string serializeRequest = JsonConvert.SerializeObject(request);
+            string serializeRequest = JsonSerializer.Serialize(request, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.DoesNotContain(@"""MethodName""", serializeRequest);
             Assert.DoesNotContain(@"""IsWebhookResponse""", serializeRequest);
@@ -29,19 +28,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 Offset = 12345
             };
 
-            var settings = new JsonSerializerSettings
-            {
-                NullValueHandling = NullValueHandling.Include,
-                ContractResolver = new CamelCasePropertyNamesContractResolver
-                {
-                    IgnoreSerializableAttribute = true,
-                    IgnoreShouldSerializeMembers = true
-                },
-                DateFormatHandling = DateFormatHandling.IsoDateFormat,
-                DateTimeZoneHandling = DateTimeZoneHandling.Unspecified
-            };
-
-            string serializeRequest = JsonConvert.SerializeObject(request, settings);
+            string serializeRequest = JsonSerializer.Serialize(request, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.DoesNotContain(@"""MethodName""", serializeRequest);
             Assert.DoesNotContain(@"""method_name""", serializeRequest);

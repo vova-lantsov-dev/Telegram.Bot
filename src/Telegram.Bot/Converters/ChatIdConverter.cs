@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿/*
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using Telegram.Bot.Types;
@@ -32,3 +33,4 @@ namespace Telegram.Bot.Converters
             => typeof(ChatId) == objectType;
     }
 }
+*/

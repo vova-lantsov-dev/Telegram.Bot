@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json;
 using Telegram.Bot.Requests;
 using Telegram.Bot.Tests.Integ.Framework;
 using Telegram.Bot.Types;
@@ -62,7 +62,7 @@ namespace Telegram.Bot.Tests.Integ.Sending_Messages
                 foursquare_type: ""parks_outdoors/park""
             }}";
 
-            SendVenueRequest request = JsonConvert.DeserializeObject<SendVenueRequest>(json);
+            SendVenueRequest request = JsonSerializer.Deserialize<SendVenueRequest>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Message message = await BotClient.MakeRequestAsync(request);
 

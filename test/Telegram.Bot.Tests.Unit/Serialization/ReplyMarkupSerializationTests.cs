@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json;
 using Telegram.Bot.Types.ReplyMarkups;
 using Xunit;
 
@@ -16,13 +16,13 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 KeyboardButton.WithRequestPoll("Create a poll", type)
             );
 
-            string serializedReplyMarkup = JsonConvert.SerializeObject(replyMarkup);
+            string serializedReplyMarkup = JsonSerializer.Serialize(replyMarkup, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             string formattedType = string.IsNullOrEmpty(type)
                 ? "{}"
-                : string.Format(@"{{""type"":""{0}""}}", type);
+                : $@"{{""type"":""{type}""}}";
 
-            string expectedString = string.Format(@"""request_poll"":{0}", formattedType);
+            string expectedString = $@"""request_poll"":{formattedType}";
 
             Assert.Contains(expectedString, serializedReplyMarkup);
         }

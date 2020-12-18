@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Telegram.Bot.Types.Enums;
@@ -23,3 +24,4 @@ namespace Telegram.Bot.Converters
         public override bool CanConvert(Type objectType) => typeof(MessageEntityType) == objectType;
     }
 }
+*/

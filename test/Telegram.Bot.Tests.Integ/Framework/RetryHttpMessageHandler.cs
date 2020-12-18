@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json;
 using Telegram.Bot.Types;
 using Xunit.Abstractions;
 using Xunit.Sdk;
@@ -42,7 +42,7 @@ namespace Telegram.Bot.Tests.Integ.Framework
 
                 // Deserializing with an arbitrary type parameter since Result property should
                 // be empty at this stage
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(body);
+                var apiResponse = JsonSerializer.Deserialize<ApiResponse<int>>(body, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
                 if (apiResponse.Parameters != null)
                 {

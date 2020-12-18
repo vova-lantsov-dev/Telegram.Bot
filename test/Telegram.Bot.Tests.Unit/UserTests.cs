@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json;
 using Telegram.Bot.Types;
 using Xunit;
 
@@ -54,9 +54,9 @@ namespace Telegram.Bot.Tests.Unit
                 ""first_name"": ""{fname2}""
             }}";
 
-            User user1 = JsonConvert.DeserializeObject<User>(json1);
-            User user1Copy = JsonConvert.DeserializeObject<User>(json1);
-            User user2 = JsonConvert.DeserializeObject<User>(json2);
+            User user1 = JsonSerializer.Deserialize<User>(json1, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            User user1Copy = JsonSerializer.Deserialize<User>(json1, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            User user2 = JsonSerializer.Deserialize<User>(json2, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Dictionary<User, string> dict = new Dictionary<User, string>
             {

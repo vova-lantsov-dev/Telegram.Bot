@@ -1,6 +1,6 @@
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json;
 using Telegram.Bot.Requests;
 using Xunit;
 
@@ -16,7 +16,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 IsWebhookResponse = true
             };
 
-            string request = JsonConvert.SerializeObject(sendMessageRequest);
+            string request = JsonSerializer.Serialize(sendMessageRequest, new JsonSerializerOptions(JsonSerializerDefaults.Web));
             Assert.Contains(@"""method"":""sendMessage""", request);
         }
 
@@ -28,7 +28,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 IsWebhookResponse = false
             };
 
-            string request = JsonConvert.SerializeObject(sendMessageRequest);
+            string request = JsonSerializer.Serialize(sendMessageRequest, new JsonSerializerOptions(JsonSerializerDefaults.Web));
             Assert.DoesNotContain(@"""method"":""sendMessage""", request);
         }
 
@@ -40,7 +40,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 IsWebhookResponse = true
             };
 
-            string request = JsonConvert.SerializeObject(deleteWebhookRequest);
+            string request = JsonSerializer.Serialize(deleteWebhookRequest, new JsonSerializerOptions(JsonSerializerDefaults.Web));
             Assert.Equal(@"{""method"":""deleteWebhook""}", request);
         }
 
@@ -52,7 +52,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 IsWebhookResponse = false
             };
 
-            string request = JsonConvert.SerializeObject(deleteWebhookRequest);
+            string request = JsonSerializer.Serialize(deleteWebhookRequest, new JsonSerializerOptions(JsonSerializerDefaults.Web));
             Assert.Equal("{}", request);
         }
 

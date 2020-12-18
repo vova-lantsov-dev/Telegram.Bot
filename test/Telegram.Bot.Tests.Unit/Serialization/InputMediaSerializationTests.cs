@@ -1,5 +1,5 @@
 using System.IO;
-using Newtonsoft.Json;
+using System.Text.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Xunit;
@@ -14,8 +14,8 @@ namespace Telegram.Bot.Tests.Unit.Serialization
             const string fileName = "myFile";
             InputMedia inputMedia = new InputMedia(new MemoryStream(), fileName);
 
-            string json = JsonConvert.SerializeObject(inputMedia);
-            InputMedia obj = JsonConvert.DeserializeObject<InputMedia>(json);
+            string json = JsonSerializer.Serialize(inputMedia, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            InputMedia obj = JsonSerializer.Deserialize<InputMedia>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.Equal($@"""attach://{fileName}""", json);
             Assert.Equal(Stream.Null, obj.Content);
@@ -31,8 +31,8 @@ namespace Telegram.Bot.Tests.Unit.Serialization
             const string fileId = "This-is-a-file_id";
             InputMedia inputMedia = fileId;
 
-            string json = JsonConvert.SerializeObject(inputMedia);
-            InputMedia obj = JsonConvert.DeserializeObject<InputMedia>(json);
+            string json = JsonSerializer.Serialize(inputMedia, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            InputMedia obj = JsonSerializer.Deserialize<InputMedia>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.Equal($@"""{fileId}""", json);
             Assert.Equal(fileId, obj.FileId);
@@ -48,8 +48,8 @@ namespace Telegram.Bot.Tests.Unit.Serialization
             const string url = "http://github.org/TelgramBots";
             InputMedia inputMedia = url;
 
-            string json = JsonConvert.SerializeObject(inputMedia);
-            InputMedia obj = JsonConvert.DeserializeObject<InputMedia>(json);
+            string json = JsonSerializer.Serialize(inputMedia, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            InputMedia obj = JsonSerializer.Deserialize<InputMedia>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.Equal($@"""{url}""", json);
             Assert.Equal(url, obj.Url);

@@ -1,7 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using Telegram.Bot.Requests;
 using Telegram.Bot.Tests.Integ.Framework;
@@ -143,7 +143,7 @@ namespace Telegram.Bot.Tests.Integ.Sending_Messages
                 caption: ""Photo request deserialized from JSON"",
             }}";
 
-            SendPhotoRequest request = JsonConvert.DeserializeObject<SendPhotoRequest>(json);
+            SendPhotoRequest request = JsonSerializer.Deserialize<SendPhotoRequest>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Message message = await BotClient.MakeRequestAsync(request);
 

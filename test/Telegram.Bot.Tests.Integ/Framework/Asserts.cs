@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using Telegram.Bot.Types;
 using Xunit;
@@ -32,8 +32,8 @@ namespace Telegram.Bot.Tests.Integ.Framework
                 else
                 {
                     // Print out both JSON values in the case of an inequality
-                    string expectedJson = JsonConvert.SerializeObject(expectedToken);
-                    string actualJson = JsonConvert.SerializeObject(actualToken);
+                    string expectedJson = JsonSerializer.Serialize(expectedToken, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+                    string actualJson = JsonSerializer.Serialize(actualToken, new JsonSerializerOptions(JsonSerializerDefaults.Web));
                     Assert.Equal(expectedJson, actualJson);
                 }
             }

@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Xunit;
@@ -16,7 +16,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 ""type"": ""phone_number""
             }";
 
-            var message = JsonConvert.DeserializeObject<MessageEntity>(json);
+            var message = JsonSerializer.Deserialize<MessageEntity>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.Equal(MessageEntityType.PhoneNumber, message.Type);
         }
@@ -31,7 +31,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 Type = MessageEntityType.PhoneNumber
             };
 
-            var json = JsonConvert.SerializeObject(messageEntity);
+            var json = JsonSerializer.Serialize(messageEntity, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.NotNull(json);
             Assert.True(json.Length > 10);
@@ -47,7 +47,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 ""type"": ""totally_unknown_type""
             }";
 
-            var message = JsonConvert.DeserializeObject<MessageEntity>(json);
+            var message = JsonSerializer.Deserialize<MessageEntity>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.Equal(MessageEntityType.Unknown, message.Type);
         }
@@ -62,7 +62,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
                 Type = MessageEntityType.Unknown
             };
 
-            var json = JsonConvert.SerializeObject(messageEntity);
+            var json = JsonSerializer.Serialize(messageEntity, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.NotNull(json);
             Assert.True(json.Length > 10);

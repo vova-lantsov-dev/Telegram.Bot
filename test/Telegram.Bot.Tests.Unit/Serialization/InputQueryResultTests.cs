@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json;
 using Telegram.Bot.Requests;
 using Telegram.Bot.Types.InlineQueryResults;
 using Xunit;
@@ -29,7 +29,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
             };
 
 
-            string json = JsonConvert.SerializeObject(request);
+            string json = JsonSerializer.Serialize(request);
 
             Assert.Contains("\"thumb_mime_type\":\"video/mp4\"", json);
         }
@@ -55,7 +55,7 @@ namespace Telegram.Bot.Tests.Unit.Serialization
             };
 
 
-            string json = JsonConvert.SerializeObject(request);
+            string json = JsonSerializer.Serialize(request);
 
             Assert.Contains("\"thumb_mime_type\":\"video/mp4\"", json);
         }

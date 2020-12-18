@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Requests;
 using Telegram.Bot.Requests.Abstractions;
@@ -144,7 +144,7 @@ namespace Telegram.Bot
             }
 
             var apiResponse =
-                JsonConvert.DeserializeObject<ApiResponse<TResponse>>(responseJson)
+                JsonSerializer.Deserialize<ApiResponse<TResponse>>(responseJson, new JsonSerializerOptions(JsonSerializerDefaults.Web))
                 ?? new ApiResponse<TResponse> // ToDo is required? unit test
                 {
                     Ok = false,

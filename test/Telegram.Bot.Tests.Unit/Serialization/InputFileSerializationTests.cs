@@ -1,5 +1,5 @@
 using System.IO;
-using Newtonsoft.Json;
+using System.Text.Json;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
 using Xunit;
@@ -13,8 +13,8 @@ namespace Telegram.Bot.Tests.Unit.Serialization
         {
             InputFileStream inputFile = new MemoryStream();
 
-            string json = JsonConvert.SerializeObject(inputFile);
-            InputFileStream obj = JsonConvert.DeserializeObject<InputFileStream>(json);
+            string json = JsonSerializer.Serialize(inputFile, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            InputFileStream obj = JsonSerializer.Deserialize<InputFileStream>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.Equal("null", json);
             Assert.Equal(Stream.Null, obj.Content);
@@ -28,8 +28,8 @@ namespace Telegram.Bot.Tests.Unit.Serialization
             const string fileId = "This-is-a-file_id";
             InputTelegramFile inputFile = fileId;
 
-            string json = JsonConvert.SerializeObject(inputFile);
-            InputTelegramFile obj = JsonConvert.DeserializeObject<InputTelegramFile>(json);
+            string json = JsonSerializer.Serialize(inputFile, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            InputTelegramFile obj = JsonSerializer.Deserialize<InputTelegramFile>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.Equal($@"""{fileId}""", json);
             Assert.Equal(fileId, obj.FileId);
@@ -41,11 +41,11 @@ namespace Telegram.Bot.Tests.Unit.Serialization
         [Fact(DisplayName = "Should serialize & deserialize input file with URL")]
         public void Should_Serialize_Input_File_Url()
         {
-            const string url = "http://github.org/TelgramBots";
+            const string url = "http://github.org/TelegramBots";
             InputOnlineFile inputFile = url;
 
-            string json = JsonConvert.SerializeObject(inputFile);
-            InputOnlineFile obj = JsonConvert.DeserializeObject<InputOnlineFile>(json);
+            string json = JsonSerializer.Serialize(inputFile, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            InputOnlineFile obj = JsonSerializer.Deserialize<InputOnlineFile>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
 
             Assert.Equal($@"""{url}""", json);
             Assert.Equal(url, obj.Url);
