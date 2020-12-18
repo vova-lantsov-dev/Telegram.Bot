@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5</TargetFramework>
+    <Nullable>enable</Nullable>
     <VersionPrefix>15.7.1</VersionPrefix>
     <!--<VersionSuffix></VersionSuffix>-->
     <LangVersion>9.0</LangVersion>
