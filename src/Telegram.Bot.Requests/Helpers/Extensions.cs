@@ -6,14 +6,14 @@ using System.Text;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
-namespace Telegram.Bot.Helpers
+namespace Telegram.Bot.Requests.Helpers
 {
     /// <summary>
     /// Extension Methods
     /// </summary>
-    public static class Extensions
+    internal static class Extensions
     {
-        internal static string EncodeUtf8(this string value) =>
+        private static string EncodeUtf8(this string value) =>
             string.Join(string.Empty, Encoding.UTF8.GetBytes(value).Select(Convert.ToChar));
 
         internal static void AddStreamContent(

@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
-using Telegram.Bot.Helpers;
 using Telegram.Bot.Requests.Abstractions;
+using Telegram.Bot.Requests.Helpers;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
@@ -10,14 +10,15 @@ using Telegram.Bot.Types.ReplyMarkups;
 namespace Telegram.Bot.Requests
 {
     /// <summary>
-    /// Send rounded video messages
+    /// Send video files, Telegram clients support mp4 videos
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendVideoNoteRequest : FileRequestBase<Message>,
-                                        INotifiableMessage,
-                                        IReplyMessage,
-                                        IReplyMarkupMessage<IReplyMarkup>,
-                                        IThumbMediaMessage
+    public class SendVideoRequest : FileRequestBase<Message>,
+                                    INotifiableMessage,
+                                    IReplyMessage,
+                                    IReplyMarkupMessage<IReplyMarkup>,
+                                    IFormattableMessage,
+                                    IThumbMediaMessage
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)
@@ -26,22 +27,44 @@ namespace Telegram.Bot.Requests
         public ChatId ChatId { get; }
 
         /// <summary>
-        /// Video note to send
+        /// Video file to send
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public InputTelegramFile VideoNote { get; }
+        public InputOnlineFile Video { get; }
 
         /// <summary>
-        /// Duration of sent video in seconds
+        /// Duration of the video in seconds
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Duration { get; set; }
 
         /// <summary>
-        /// Video width and height
+        /// Video width
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Length { get; set; }
+        public int Width { get; set; }
+
+        /// <summary>
+        /// Video height
+        /// </summary>
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int Height { get; set; }
+
+        /// <summary>
+        /// Video caption (may also be used when resending videos by file_id), 0-1024 characters
+        /// </summary>
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Caption { get; set; }
+
+        /// <inheritdoc />
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public ParseMode ParseMode { get; set; }
+
+        /// <summary>
+        /// Pass True, if the uploaded video is suitable for streaming
+        /// </summary>
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public bool SupportsStreaming { get; set; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -60,27 +83,27 @@ namespace Telegram.Bot.Requests
         public IReplyMarkup ReplyMarkup { get; set; }
 
         /// <summary>
-        /// Initializes a new request with chatId and video note
+        /// Initializes a new request with chatId and video
         /// </summary>
         /// <param name="chatId">Unique identifier for the target chat or username of the target channel</param>
-        /// <param name="videoNote">Video note to send</param>
-        public SendVideoNoteRequest(ChatId chatId, InputTelegramFile videoNote)
-            : base("sendVideoNote")
+        /// <param name="video">Video to send</param>
+        public SendVideoRequest(ChatId chatId, InputOnlineFile video)
+            : base("sendVideo")
         {
             ChatId = chatId;
-            VideoNote = videoNote;
+            Video = video;
         }
 
         /// <inheritdoc />
         public override HttpContent ToHttpContent()
         {
             HttpContent httpContent;
-            if (VideoNote.FileType == FileType.Stream || Thumb?.FileType == FileType.Stream)
+            if (Video.FileType == FileType.Stream || Thumb?.FileType == FileType.Stream)
             {
-                var multipartContent = GenerateMultipartFormDataContent("video_note", "thumb");
-                if (VideoNote.FileType == FileType.Stream)
+                var multipartContent = GenerateMultipartFormDataContent("video", "thumb");
+                if (Video.FileType == FileType.Stream)
                 {
-                    multipartContent.AddStreamContent(VideoNote.Content, "video_note", VideoNote.FileName);
+                    multipartContent.AddStreamContent(Video.Content, "video", Video.FileName);
                 }
 
                 if (Thumb?.FileType == FileType.Stream)

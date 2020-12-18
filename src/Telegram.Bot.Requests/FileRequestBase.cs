@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
-using Telegram.Bot.Helpers;
+using Telegram.Bot.Requests.Helpers;
 using Telegram.Bot.Types.InputFiles;
 
 namespace Telegram.Bot.Requests

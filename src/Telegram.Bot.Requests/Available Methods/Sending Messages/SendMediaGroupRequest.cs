@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using Telegram.Bot.Helpers;
 using Telegram.Bot.Requests.Abstractions;
+using Telegram.Bot.Requests.Helpers;
 using Telegram.Bot.Types;
 
 // ReSharper disable once CheckNamespace

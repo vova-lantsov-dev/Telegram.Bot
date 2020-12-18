@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
-using Telegram.Bot.Helpers;
 using Telegram.Bot.Requests.Abstractions;
+using Telegram.Bot.Requests.Helpers;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
@@ -10,15 +10,15 @@ using Telegram.Bot.Types.ReplyMarkups;
 namespace Telegram.Bot.Requests
 {
     /// <summary>
-    /// Send documents
+    /// Send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .mp3 format.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendDocumentRequest : FileRequestBase<Message>,
-                                       INotifiableMessage,
-                                       IReplyMessage,
-                                       IReplyMarkupMessage<IReplyMarkup>,
-                                       IFormattableMessage,
-                                       IThumbMediaMessage
+    public class SendAudioRequest : FileRequestBase<Message>,
+        INotifiableMessage,
+        IReplyMessage,
+        IReplyMarkupMessage<IReplyMarkup>,
+        IFormattableMessage,
+        IThumbMediaMessage
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)
@@ -27,10 +27,10 @@ namespace Telegram.Bot.Requests
         public ChatId ChatId { get; }
 
         /// <summary>
-        /// Document to send.
+        /// Audio file to send
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public InputOnlineFile Document { get; }
+        public InputOnlineFile Audio { get; }
 
         /// <summary>
         /// Photo caption (may also be used when resending photos by file_id), 0-1024 characters
@@ -40,15 +40,29 @@ namespace Telegram.Bot.Requests
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMedia Thumb { get; set; }
-
-        /// <inheritdoc />
-        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public ParseMode ParseMode { get; set; }
 
+        /// <summary>
+        /// Duration of the audio in seconds
+        /// </summary>
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int Duration { get; set; }
+
+        /// <summary>
+        /// Performer
+        /// </summary>
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Performer { get; set; }
+
+        /// <summary>
+        /// Track name
+        /// </summary>
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Title { get; set; }
+
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ReplyToMessageId { get; set; }
+        public InputMedia Thumb { get; set; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -56,30 +70,34 @@ namespace Telegram.Bot.Requests
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int ReplyToMessageId { get; set; }
+
+        /// <inheritdoc />
+        //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IReplyMarkup ReplyMarkup { get; set; }
 
         /// <summary>
-        /// Initializes a new request with chatId and document
+        /// Initializes a new request with chatId and audio
         /// </summary>
         /// <param name="chatId">Unique identifier for the target chat or username of the target channel</param>
-        /// <param name="document">Document to send</param>
-        public SendDocumentRequest(ChatId chatId, InputOnlineFile document)
-            : base("sendDocument")
+        /// <param name="audio">Audio to send</param>
+        public SendAudioRequest(ChatId chatId, InputOnlineFile audio)
+            : base("sendAudio")
         {
             ChatId = chatId;
-            Document = document;
+            Audio = audio;
         }
 
         /// <inheritdoc />
         public override HttpContent ToHttpContent()
         {
             HttpContent httpContent;
-            if (Document.FileType == FileType.Stream || Thumb?.FileType == FileType.Stream)
+            if (Audio.FileType == FileType.Stream || Thumb?.FileType == FileType.Stream)
             {
-                var multipartContent = GenerateMultipartFormDataContent("document", "thumb");
-                if (Document.FileType == FileType.Stream)
+                var multipartContent = GenerateMultipartFormDataContent("audio", "thumb");
+                if (Audio.FileType == FileType.Stream)
                 {
-                    multipartContent.AddStreamContent(Document.Content, "document", Document.FileName);
+                    multipartContent.AddStreamContent(Audio.Content, "audio", Audio.FileName);
                 }
 
                 if (Thumb?.FileType == FileType.Stream)

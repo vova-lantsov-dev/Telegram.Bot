@@ -1,6 +1,6 @@
 using System.Net.Http;
-using Telegram.Bot.Helpers;
 using Telegram.Bot.Requests.Abstractions;
+using Telegram.Bot.Requests.Helpers;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
 

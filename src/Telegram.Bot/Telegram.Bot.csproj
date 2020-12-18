@@ -43,6 +43,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Telegram.Bot.Abstractions\Telegram.Bot.Abstractions.csproj" />
+    <ProjectReference Include="..\Telegram.Bot.Exceptions\Telegram.Bot.Exceptions.csproj" />
+    <ProjectReference Include="..\Telegram.Bot.Requests\Telegram.Bot.Requests.csproj" />
   </ItemGroup>
 
 </Project>
