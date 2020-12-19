@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Send information about a venue
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendVenueRequest : RequestBase<Message>,
+    public sealed record SendVenueRequest : RequestBase<Message>,
                                     INotifiableMessage,
                                     IReplyMessage,
                                     IReplyMarkupMessage<IReplyMarkup>

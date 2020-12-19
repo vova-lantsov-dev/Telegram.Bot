@@ -9,7 +9,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them.
     /// </remarks>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InlineQueryResultVenue : InlineQueryResultBase,
+    public sealed record InlineQueryResultVenue : InlineQueryResultBase,
         IThumbnailInlineQueryResult,
         ITitleInlineQueryResult,
         IInputMessageContentResult,

@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents an animation file to be displayed in the message containing a <see cref="Game"/>.
     /// </summary>
     ////[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Animation
+    public sealed record Animation
     {
         /// <summary>
         /// Identifier for this file, which can be used to download or reuse the file

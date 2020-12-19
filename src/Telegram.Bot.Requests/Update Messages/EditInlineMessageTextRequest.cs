@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Edit text and game messages sent via the bot (for inline bots). On success True is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class EditInlineMessageTextRequest : RequestBase<bool>,
+    public sealed record EditInlineMessageTextRequest : RequestBase<bool>,
                                                 IFormattableMessage,
                                                 IInlineMessage,
                                                 IInlineReplyMarkupMessage

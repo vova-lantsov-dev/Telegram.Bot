@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types
     /// Represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InputMediaAnimation : InputMediaBase, IInputMediaThumb
+    public sealed record InputMediaAnimation : InputMediaBase, IInputMediaThumb
     {
         /// <summary>
         /// Optional. Animation width

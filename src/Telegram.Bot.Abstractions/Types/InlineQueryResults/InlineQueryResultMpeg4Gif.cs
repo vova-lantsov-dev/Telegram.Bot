@@ -9,7 +9,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Alternatively, you can provide message_text to send it instead of the animation.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InlineQueryResultMpeg4Gif : InlineQueryResultBase,
+    public sealed record InlineQueryResultMpeg4Gif : InlineQueryResultBase,
         ICaptionInlineQueryResult,
         IThumbnailUrlInlineQueryResult,
         ITitleInlineQueryResult,

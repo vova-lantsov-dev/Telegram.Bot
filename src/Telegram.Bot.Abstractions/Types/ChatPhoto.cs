@@ -4,7 +4,7 @@
     /// Collection of fileIds of profile pictures of a chat.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class ChatPhoto
+    public sealed record ChatPhoto
     {
         /// <summary>
         /// File id of the big version of this <see cref="ChatPhoto"/>

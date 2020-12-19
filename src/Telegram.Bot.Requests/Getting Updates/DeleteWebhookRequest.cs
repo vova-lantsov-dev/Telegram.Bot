@@ -6,7 +6,7 @@ namespace Telegram.Bot.Requests
     /// Remove webhook integration if you decide to switch back to getUpdates.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class DeleteWebhookRequest : ParameterlessRequest<bool>
+    public sealed record DeleteWebhookRequest : ParameterlessRequest<bool>
     {
         /// <summary>
         /// Initializes a new request

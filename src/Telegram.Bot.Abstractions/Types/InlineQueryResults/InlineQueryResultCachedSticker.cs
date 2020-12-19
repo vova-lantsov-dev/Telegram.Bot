@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Represents a link to a sticker stored on the Telegram servers. By default, this sticker will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the sticker.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InlineQueryResultCachedSticker : InlineQueryResultBase,
+    public sealed record InlineQueryResultCachedSticker : InlineQueryResultBase,
                                                   IInputMessageContentResult
     {
         /// <summary>

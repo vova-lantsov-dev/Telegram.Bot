@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// Contains information about why a request was unsuccessful.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class ResponseParameters
+    public sealed record ResponseParameters
     {
         /// <summary>
         /// The group has been migrated to a supergroup with the specified identifier.

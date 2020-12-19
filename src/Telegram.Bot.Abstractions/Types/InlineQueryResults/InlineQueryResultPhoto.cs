@@ -9,7 +9,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Alternatively, you can provide message_text to send it instead of photo.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InlineQueryResultPhoto : InlineQueryResultBase,
+    public sealed record InlineQueryResultPhoto : InlineQueryResultBase,
         ICaptionInlineQueryResult,
         IThumbnailUrlInlineQueryResult,
         ITitleInlineQueryResult,

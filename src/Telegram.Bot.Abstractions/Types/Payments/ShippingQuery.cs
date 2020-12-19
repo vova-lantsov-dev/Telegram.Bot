@@ -4,7 +4,7 @@
     /// This object contains information about an incoming shipping query.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class ShippingQuery
+    public sealed record ShippingQuery
     {
         /// <summary>
         /// Unique query identifier

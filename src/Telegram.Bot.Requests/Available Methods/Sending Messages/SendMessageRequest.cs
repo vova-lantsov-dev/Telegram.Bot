@@ -10,7 +10,7 @@ namespace Telegram.Bot.Requests
     /// Send text messages
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendMessageRequest : RequestBase<Message>,
+    public sealed record SendMessageRequest : RequestBase<Message>,
                                       INotifiableMessage,
                                       IReplyMessage,
                                       IFormattableMessage,

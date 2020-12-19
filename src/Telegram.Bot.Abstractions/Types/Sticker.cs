@@ -5,7 +5,7 @@
     /// <see href="https://core.telegram.org/bots/api#sticker"/>
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Sticker : FileBase
+    public sealed record Sticker : FileBase
     {
         /// <summary>
         /// Sticker width

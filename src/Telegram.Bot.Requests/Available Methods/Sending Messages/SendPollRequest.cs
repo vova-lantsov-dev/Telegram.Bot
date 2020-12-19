@@ -12,7 +12,7 @@ namespace Telegram.Bot.Requests
     /// Send a native poll. A native poll can't be sent to a private chat.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendPollRequest : RequestBase<Message>,
+    public sealed record SendPollRequest : RequestBase<Message>,
                                    INotifiableMessage,
                                    IReplyMessage,
                                    IReplyMarkupMessage<IReplyMarkup>

@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Unban a previously kicked user in a supergroup or channel
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class UnbanChatMemberRequest : RequestBase<bool>
+    public sealed record UnbanChatMemberRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the target group or username of the target supergroup or channel

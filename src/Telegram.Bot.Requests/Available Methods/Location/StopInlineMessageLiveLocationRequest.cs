@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Stop updating a live location message sent via the bot (for inline bots) before live period expires
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class StopInlineMessageLiveLocationRequest : RequestBase<bool>,
+    public sealed record StopInlineMessageLiveLocationRequest : RequestBase<bool>,
                                                         IInlineMessage,
                                                         IInlineReplyMarkupMessage
     {

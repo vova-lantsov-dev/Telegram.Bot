@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents a phone contact.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Contact
+    public sealed record Contact
     {
         /// <summary>
         /// Contact's phone number

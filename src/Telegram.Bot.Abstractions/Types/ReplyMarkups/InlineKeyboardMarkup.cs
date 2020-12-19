@@ -9,7 +9,7 @@ namespace Telegram.Bot.Types.ReplyMarkups
     /// Inline keyboards are currently being tested and are not available in channels yet. For now, feel free to use them in one-on-one chats or groups.
     /// </remarks>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InlineKeyboardMarkup : IReplyMarkup
+    public sealed class InlineKeyboardMarkup : IReplyMarkup
     {
         /// <summary>
         /// Array of <see cref="InlineKeyboardButton"/> rows, each represented by an Array of <see cref="InlineKeyboardButton"/>.

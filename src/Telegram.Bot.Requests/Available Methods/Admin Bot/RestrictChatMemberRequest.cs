@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate admin rights. Pass True for all boolean parameters to lift restrictions from a user.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class RestrictChatMemberRequest : RequestBase<bool>
+    public sealed record RestrictChatMemberRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)

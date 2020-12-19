@@ -12,7 +12,7 @@ namespace Telegram.Bot.Requests
     /// Send photos
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendPhotoRequest : FileRequestBase<Message>,
+    public sealed record SendPhotoRequest : FileRequestBase<Message>,
                                     INotifiableMessage,
                                     IReplyMessage,
                                     IReplyMarkupMessage<IReplyMarkup>,

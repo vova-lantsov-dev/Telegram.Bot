@@ -12,7 +12,7 @@ namespace Telegram.Bot.Types
     /// This object represents a message.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Message
+    public sealed record Message
     {
         /// <summary>
         /// Unique message identifier

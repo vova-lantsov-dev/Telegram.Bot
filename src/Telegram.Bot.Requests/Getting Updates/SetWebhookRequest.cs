@@ -10,7 +10,7 @@ namespace Telegram.Bot.Requests
     /// Specify a url and receive incoming updates via an outgoing webhook
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SetWebhookRequest : FileRequestBase<bool>
+    public sealed record SetWebhookRequest : FileRequestBase<bool>
     {
         /// <summary>
         /// HTTPS url to send updates to. Use an empty string to remove webhook integration.

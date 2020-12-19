@@ -5,7 +5,7 @@ namespace Telegram.Bot.Types.Payments
     /// </summary>
     /// <see href="https://core.telegram.org/bots/api#labeledprice"/>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class LabeledPrice
+    public sealed record LabeledPrice
     {
         /// <summary>
         /// Portion label

@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents a dice with random value
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Dice
+    public sealed record Dice
     {
         /// <summary>
         /// Emoji on which the dice throw animation is based

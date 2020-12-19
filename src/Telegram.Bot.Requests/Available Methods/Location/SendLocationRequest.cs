@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Send point on the map
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendLocationRequest : RequestBase<Message>,
+    public sealed record SendLocationRequest : RequestBase<Message>,
                                        INotifiableMessage,
                                        IReplyMessage,
                                        IReplyMarkupMessage<IReplyMarkup>

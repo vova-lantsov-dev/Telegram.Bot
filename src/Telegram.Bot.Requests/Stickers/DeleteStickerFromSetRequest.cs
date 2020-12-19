@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Delete a sticker from a set created by the bot. Returns True on success.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class DeleteStickerFromSetRequest : RequestBase<bool>
+    public sealed record DeleteStickerFromSetRequest : RequestBase<bool>
     {
         /// <summary>
         /// File identifier of the sticker

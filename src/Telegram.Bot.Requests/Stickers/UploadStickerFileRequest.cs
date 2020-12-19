@@ -10,7 +10,7 @@ namespace Telegram.Bot.Requests
     /// Upload a .png file with a sticker for later use in createNewStickerSet and addStickerToSet methods (can be used multiple times). Returns the uploaded <see cref="File"/> on success.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class UploadStickerFileRequest : FileRequestBase<File>
+    public sealed record UploadStickerFileRequest : FileRequestBase<File>
     {
         /// <summary>
         /// User identifier of sticker file owner

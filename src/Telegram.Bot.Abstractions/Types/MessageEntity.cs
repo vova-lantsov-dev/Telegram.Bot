@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types
     /// This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class MessageEntity
+    public sealed record MessageEntity
     {
         /// <summary>
         /// Type of the entity

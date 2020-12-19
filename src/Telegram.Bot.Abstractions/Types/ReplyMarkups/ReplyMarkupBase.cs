@@ -5,7 +5,7 @@
     /// </summary>
     /// <seealso cref="Telegram.Bot.Types.ReplyMarkups.IReplyMarkup" />
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public abstract class ReplyMarkupBase : IReplyMarkup
+    public abstract record ReplyMarkupBase : IReplyMarkup
     {
         /// <summary>
         /// Optional. Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Description object; 2) if the bot's message is a reply (has <see cref="Message.ReplyToMessage"/>), sender of the original message.

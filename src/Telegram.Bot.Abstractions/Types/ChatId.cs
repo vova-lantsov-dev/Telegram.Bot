@@ -4,7 +4,7 @@
     /// Represents a ChatId
     /// </summary>
     //[JsonConverter(typeof(ChatIdConverter))]
-    public class ChatId
+    public sealed record ChatId
     {
         /// <summary>
         /// Unique identifier for the chat
@@ -53,13 +53,6 @@
                 Identifier = identifier;
             }
         }
-
-        /// <summary>
-        /// Determines whether the specified object is equal to the current object.
-        /// </summary>
-        /// <param name="obj">The object to compare with the current object.</param>
-        /// <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
-        public override bool Equals(object obj) => ((string)this).Equals(obj);
 
         /// <summary>
         /// Gets the hash code of this object

@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types
     /// Represents a video to be sent
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InputMediaVideo : InputMediaBase, IInputMediaThumb, IAlbumInputMedia
+    public sealed record InputMediaVideo : InputMediaBase, IInputMediaThumb, IAlbumInputMedia
     {
         /// <summary>
         /// Optional. Video width

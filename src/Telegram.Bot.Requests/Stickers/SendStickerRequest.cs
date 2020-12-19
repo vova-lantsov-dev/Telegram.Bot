@@ -12,7 +12,7 @@ namespace Telegram.Bot.Requests
     /// Send .webp stickers. On success, the sent <see cref="Message"/> is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendStickerRequest : FileRequestBase<Message>,
+    public sealed record SendStickerRequest : FileRequestBase<Message>,
                                       INotifiableMessage,
                                       IReplyMessage,
                                       IReplyMarkupMessage<IReplyMarkup>

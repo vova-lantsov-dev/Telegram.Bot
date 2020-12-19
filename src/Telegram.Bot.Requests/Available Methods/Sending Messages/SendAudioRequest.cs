@@ -13,7 +13,7 @@ namespace Telegram.Bot.Requests
     /// Send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .mp3 format.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendAudioRequest : FileRequestBase<Message>,
+    public sealed record SendAudioRequest : FileRequestBase<Message>,
         INotifiableMessage,
         IReplyMessage,
         IReplyMarkupMessage<IReplyMarkup>,

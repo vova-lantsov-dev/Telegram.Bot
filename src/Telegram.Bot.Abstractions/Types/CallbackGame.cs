@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// A placeholder, currently holds no information.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class CallbackGame
+    public sealed record CallbackGame
     {
     }
 }

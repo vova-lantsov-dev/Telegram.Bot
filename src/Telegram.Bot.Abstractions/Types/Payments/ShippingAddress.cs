@@ -4,7 +4,7 @@
     /// This object represents a shipping address.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class ShippingAddress
+    public sealed record ShippingAddress
     {
         /// <summary>
         /// ISO 3166-1 alpha-2 country code

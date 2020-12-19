@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Kick a user from a group, a supergroup or a channel
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class KickChatMemberRequest : RequestBase<bool>
+    public sealed record KickChatMemberRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the target group or username of the target supergroup or channel

@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Send answers to callback queries sent from inline keyboards
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class AnswerCallbackQueryRequest : RequestBase<bool>
+    public sealed record AnswerCallbackQueryRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the query to be answered

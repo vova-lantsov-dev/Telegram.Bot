@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Add a new animated sticker to a set created by the bot. Returns True on success.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class AddAnimatedStickerToSetRequest : FileRequestBase<bool>
+    public sealed record AddAnimatedStickerToSetRequest : FileRequestBase<bool>
     {
         /// <summary>
         /// User identifier of sticker set owner

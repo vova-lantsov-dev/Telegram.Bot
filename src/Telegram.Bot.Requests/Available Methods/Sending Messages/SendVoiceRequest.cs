@@ -12,7 +12,7 @@ namespace Telegram.Bot.Requests
     /// Send audio files, if you want Telegram clients to display the file as a playable voice message
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendVoiceRequest : FileRequestBase<Message>,
+    public sealed record SendVoiceRequest : FileRequestBase<Message>,
                                     INotifiableMessage,
                                     IReplyMessage,
                                     IReplyMarkupMessage<IReplyMarkup>,

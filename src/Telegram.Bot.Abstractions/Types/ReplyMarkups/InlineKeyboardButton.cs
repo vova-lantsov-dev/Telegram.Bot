@@ -4,7 +4,7 @@
     /// This object represents one button of an inline keyboard.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InlineKeyboardButton : IKeyboardButton
+    public sealed record InlineKeyboardButton : IKeyboardButton
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]

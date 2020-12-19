@@ -10,7 +10,7 @@ namespace Telegram.Bot.Requests
     /// Stop a poll
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class StopPollRequest : RequestBase<Poll>,
+    public sealed record StopPollRequest : RequestBase<Poll>,
                                    IReplyMarkupMessage<InlineKeyboardMarkup>
     {
         /// <summary>

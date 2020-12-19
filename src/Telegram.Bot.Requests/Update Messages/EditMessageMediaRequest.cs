@@ -11,7 +11,7 @@ namespace Telegram.Bot.Requests
     /// Edit audio, document, photo, or video messages. On success the edited <see cref="Message"/> is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class EditMessageMediaRequest : FileRequestBase<Message>,
+    public sealed record EditMessageMediaRequest : FileRequestBase<Message>,
         IInlineReplyMarkupMessage
     {
         /// <summary>

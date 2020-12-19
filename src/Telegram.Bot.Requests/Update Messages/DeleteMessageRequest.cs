@@ -13,7 +13,7 @@ namespace Telegram.Bot.Requests
     /// Returns True on success.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class DeleteMessageRequest : RequestBase<bool>
+    public sealed record DeleteMessageRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)

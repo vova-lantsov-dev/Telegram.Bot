@@ -4,7 +4,7 @@
     /// This object contains basic information about a successful payment.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SuccessfulPayment
+    public sealed record SuccessfulPayment
     {
         /// <summary>
         /// Three-letter ISO 4217 currency code

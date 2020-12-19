@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types
     /// This object represents a chat.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Chat
+    public sealed record Chat
     {
         /// <summary>
         /// Unique identifier for this chat, not exceeding 1e13 by absolute value

@@ -10,7 +10,7 @@ namespace Telegram.Bot.Requests
     /// </summary>
     /// <typeparam name="TResponse">Type of result expected in result</typeparam>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public abstract class RequestBase<TResponse> : IRequest<TResponse>
+    public abstract record RequestBase<TResponse> : IRequest<TResponse>
     {
         /// <inheritdoc />
         //[JsonIgnore]

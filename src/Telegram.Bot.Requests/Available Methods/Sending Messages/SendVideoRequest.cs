@@ -13,7 +13,7 @@ namespace Telegram.Bot.Requests
     /// Send video files, Telegram clients support mp4 videos
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendVideoRequest : FileRequestBase<Message>,
+    public sealed record SendVideoRequest : FileRequestBase<Message>,
                                     INotifiableMessage,
                                     IReplyMessage,
                                     IReplyMarkupMessage<IReplyMarkup>,

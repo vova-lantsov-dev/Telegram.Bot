@@ -4,7 +4,7 @@
     /// This object represents a video file.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Video : FileBase
+    public sealed record Video : FileBase
     {
         /// <summary>
         /// Video width as defined by sender

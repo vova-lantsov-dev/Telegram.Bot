@@ -8,7 +8,7 @@ namespace Telegram.Bot.Types.InputFiles
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     //[JsonConverter(typeof(InputFileConverter))]
-    public class InputFileStream : IInputFile
+    public record InputFileStream : IInputFile
     {
         /// <summary>
         /// File content to upload

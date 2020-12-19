@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Represents the content of a <see cref="Venue"/> message to be sent as the result of an <see cref="InlineQuery"/>.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InputVenueMessageContent : InputMessageContentBase
+    public sealed record InputVenueMessageContent : InputMessageContentBase
     {
         /// <summary>
         /// Latitude of the location in degrees

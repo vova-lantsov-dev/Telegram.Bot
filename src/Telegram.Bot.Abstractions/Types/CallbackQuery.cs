@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types
     /// This object represents an incoming callback query from a <see cref="InlineKeyboardButton"/>. If the button that originated the query was attached to a <see cref="Message"/> sent by the bot, the field message will be presented. If the button was attached to a message sent via the bot (in inline mode), the field <see cref="InlineMessageId"/> will be presented.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class CallbackQuery
+    public sealed record CallbackQuery
     {
         /// <summary>
         /// Unique identifier for this query

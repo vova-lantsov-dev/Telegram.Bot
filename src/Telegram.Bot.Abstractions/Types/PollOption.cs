@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object contains information about one answer option in a poll.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class PollOption
+    public sealed record PollOption
     {
         /// <summary>
         /// Option text, 1-100 characters

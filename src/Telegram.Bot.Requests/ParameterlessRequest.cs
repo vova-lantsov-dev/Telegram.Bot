@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// </summary>
     /// <typeparam name="TResult"></typeparam>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class ParameterlessRequest<TResult> : RequestBase<TResult>
+    public record ParameterlessRequest<TResult> : RequestBase<TResult>
     {
         /// <summary>
         /// Initializes an instance of <see cref="ParameterlessRequest{TResult}"/>

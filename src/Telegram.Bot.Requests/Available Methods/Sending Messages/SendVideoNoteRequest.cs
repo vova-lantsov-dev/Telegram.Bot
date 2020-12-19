@@ -13,7 +13,7 @@ namespace Telegram.Bot.Requests
     /// Send rounded video messages
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SendVideoNoteRequest : FileRequestBase<Message>,
+    public sealed record SendVideoNoteRequest : FileRequestBase<Message>,
                                         INotifiableMessage,
                                         IReplyMessage,
                                         IReplyMarkupMessage<IReplyMarkup>,

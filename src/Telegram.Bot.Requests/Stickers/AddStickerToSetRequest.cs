@@ -10,7 +10,7 @@ namespace Telegram.Bot.Requests
     /// Add a new sticker to a set created by the bot. Returns True on success.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class AddStickerToSetRequest : FileRequestBase<bool>
+    public sealed record AddStickerToSetRequest : FileRequestBase<bool>
     {
         /// <summary>
         /// User identifier of sticker set owner

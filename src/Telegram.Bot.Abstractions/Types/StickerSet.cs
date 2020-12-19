@@ -5,7 +5,7 @@
     /// <see href="https://core.telegram.org/bots/api#stickerset"/>
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class StickerSet
+    public sealed record StickerSet
     {
         /// <summary>
         /// Sticker set name

@@ -9,7 +9,7 @@ namespace Telegram.Bot.Types.InputFiles
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     //[JsonConverter(typeof(InputFileConverter))]
-    public class InputOnlineFile : InputTelegramFile
+    public record InputOnlineFile : InputTelegramFile
     {
         /// <summary>
         /// HTTP URL for Telegram to get a file from the Internet

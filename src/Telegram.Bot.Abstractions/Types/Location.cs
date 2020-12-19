@@ -4,7 +4,7 @@
     /// This object represents a point on the map.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Location
+    public sealed record Location
     {
         /// <summary>
         /// Longitude as defined by sender

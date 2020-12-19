@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Edit audio, document, photo, or video inline messages
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class EditInlineMessageMediaRequest : RequestBase<bool>,
+    public sealed record EditInlineMessageMediaRequest : RequestBase<bool>,
         IInlineMessage,
         IInlineReplyMarkupMessage
     {

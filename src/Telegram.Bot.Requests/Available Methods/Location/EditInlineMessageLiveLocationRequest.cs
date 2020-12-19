@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Edit live location messages sent via the bot (for inline bots)
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class EditInlineMessageLiveLocationRequest : RequestBase<bool>,
+    public sealed record EditInlineMessageLiveLocationRequest : RequestBase<bool>,
                                                         IInlineMessage,
                                                         IInlineReplyMarkupMessage
     {

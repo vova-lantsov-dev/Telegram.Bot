@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents a bot command
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class BotCommand
+    public sealed record BotCommand
     {
         /// <summary>
         /// Text of the command, 1-32 characters. Can contain only lowercase English letters, digits and underscores.

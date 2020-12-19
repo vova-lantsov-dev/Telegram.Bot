@@ -4,7 +4,7 @@
     /// This object represents a result of an <see cref="InlineQuery"/> that was chosen by the <see cref="User"/> and sent to their chat partner.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class ChosenInlineResult
+    public sealed record ChosenInlineResult
     {
         /// <summary>
         /// The unique identifier for the result that was chosen.

@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Set a new group sticker set for a supergroup
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SetChatStickerSetRequest : RequestBase<bool>
+    public sealed record SetChatStickerSetRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)

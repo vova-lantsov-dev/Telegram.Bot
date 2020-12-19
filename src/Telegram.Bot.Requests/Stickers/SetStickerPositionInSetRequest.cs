@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Move a sticker in a set created by the bot to a specific position. Returns True on success.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class SetStickerPositionInSetRequest : RequestBase<bool>
+    public sealed record SetStickerPositionInSetRequest : RequestBase<bool>
     {
         /// <summary>
         /// File identifier of the sticker

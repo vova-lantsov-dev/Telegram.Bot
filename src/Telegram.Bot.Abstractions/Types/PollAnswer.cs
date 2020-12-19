@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents an answer of a user in a non-anonymous poll.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class PollAnswer
+    public sealed record PollAnswer
     {
         /// <summary>
         /// Unique poll identifier

@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Represents the content of a text message to be sent as the result of an <see cref="InlineQuery"/>.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class InputTextMessageContent : InputMessageContentBase
+    public sealed record InputTextMessageContent : InputMessageContentBase
     {
         /// <summary>
         /// Text of the message to be sent, 1-4096 characters
