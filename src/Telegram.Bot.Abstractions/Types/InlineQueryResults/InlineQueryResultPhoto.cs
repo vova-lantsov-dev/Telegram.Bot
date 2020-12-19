@@ -17,47 +17,47 @@ namespace Telegram.Bot.Types.InlineQueryResults
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string ThumbUrl { get; set; }
+        public string ThumbUrl { get; init; }
 
         /// <summary>
         /// A valid URL of the photo. Photo size must not exceed 5MB.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string PhotoUrl { get; set; }
+        public string PhotoUrl { get; init; }
 
         /// <summary>
         /// Optional. Width of the photo
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int PhotoWidth { get; set; }
+        public int PhotoWidth { get; init; }
 
         /// <summary>
         /// Optional. Height of the photo
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int PhotoHeight { get; set; }
+        public int PhotoHeight { get; init; }
 
         /// <summary>
         /// Optional. Short description of the result
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Description { get; set; }
+        public string Description { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultPhoto()
             : base(InlineQueryResultType.Photo)

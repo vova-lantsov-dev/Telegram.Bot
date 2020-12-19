@@ -32,7 +32,7 @@ namespace Telegram.Bot.Requests
         /// Required if ok is False. Error message in human readable form that explains why it is impossible to complete the order (e.g. "Sorry, delivery to your desired address is unavailable'). Telegram will display this message to the user.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get; init; }
 
         private AnswerShippingQueryRequest()
             : base("answerShippingQuery")

@@ -18,13 +18,13 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// Optional. Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <summary>
         /// Optional. Disables link previews for links in the sent message
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool DisableWebPagePreview { get; set; }
+        public bool DisableWebPagePreview { get; init; }
 
         private InputTextMessageContent()
         { }

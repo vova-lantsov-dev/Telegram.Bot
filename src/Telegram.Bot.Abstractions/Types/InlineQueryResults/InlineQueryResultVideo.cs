@@ -17,57 +17,57 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// A valid URL for the embedded video player or video file
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string VideoUrl { get; set; }
+        public string VideoUrl { get; init; }
 
         /// <summary>
         /// Mime type of the content of video url, i.e. "text/html" or "video/mp4"
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string MimeType { get; set; }
+        public string MimeType { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string ThumbUrl { get; set; }
+        public string ThumbUrl { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// Optional. Video width
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int VideoWidth { get; set; }
+        public int VideoWidth { get; init; }
 
         /// <summary>
         /// Optional. Video height
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int VideoHeight { get; set; }
+        public int VideoHeight { get; init; }
 
         /// <summary>
         /// Optional. Video duration in seconds
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int VideoDuration { get; set; }
+        public int VideoDuration { get; init; }
 
         /// <summary>
         /// Optional. Short description of the result
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Description { get; set; }
+        public string Description { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultVideo()
             : base(InlineQueryResultType.Video)

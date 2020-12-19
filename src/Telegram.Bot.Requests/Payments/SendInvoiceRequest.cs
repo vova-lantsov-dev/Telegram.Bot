@@ -68,87 +68,87 @@ namespace Telegram.Bot.Requests
         /// JSON-encoded data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ProviderData { get; set; }
+        public string ProviderData { get; init; }
 
         /// <summary>
         /// URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string PhotoUrl { get; set; }
+        public string PhotoUrl { get; init; }
 
         /// <summary>
         /// Photo size
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int PhotoSize { get; set; }
+        public int PhotoSize { get; init; }
 
         /// <summary>
         /// Photo width
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int PhotoWidth { get; set; }
+        public int PhotoWidth { get; init; }
 
         /// <summary>
         /// Photo height
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int PhotoHeight { get; set; }
+        public int PhotoHeight { get; init; }
 
         /// <summary>
         /// Pass True, if you require the user's full name to complete the order
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool NeedName { get; set; }
+        public bool NeedName { get; init; }
 
         /// <summary>
         /// Pass True, if you require the user's phone number to complete the order
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool NeedPhoneNumber { get; set; }
+        public bool NeedPhoneNumber { get; init; }
 
         /// <summary>
         /// Pass True, if you require the user's email to complete the order
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool NeedEmail { get; set; }
+        public bool NeedEmail { get; init; }
 
         /// <summary>
         /// Pass True, if you require the user's shipping address to complete the order
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool NeedShippingAddress { get; set; }
+        public bool NeedShippingAddress { get; init; }
 
         /// <summary>
         /// Pass True, if user's phone number should be sent to provider
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool SendPhoneNumberToProvider { get; set; }
+        public bool SendPhoneNumberToProvider { get; init; }
 
         /// <summary>
         /// Pass True, if user's email address should be sent to provider
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool SendEmailToProvider { get; set; }
+        public bool SendEmailToProvider { get; init; }
 
         /// <summary>
         /// Pass True, if you require the user's email to complete the order
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool IsFlexible { get; set; }
+        public bool IsFlexible { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool DisableNotification { get; set; }
+        public bool DisableNotification { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ReplyToMessageId { get; set; }
+        public int ReplyToMessageId { get; init; }
 
         /// <summary>
         /// A JSON-serialized object for an inline keyboard. If empty, one 'Pay total price' button will be shown. If not empty, the first button must be a Pay button.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InlineKeyboardMarkup ReplyMarkup { get; set; }
+        public InlineKeyboardMarkup ReplyMarkup { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId, title, description, payload, providerToken, sStartParameter, currency and an array of <see cref="LabeledPrice"/>

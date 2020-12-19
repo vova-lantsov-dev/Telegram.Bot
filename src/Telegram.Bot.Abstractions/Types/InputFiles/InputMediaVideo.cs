@@ -13,29 +13,29 @@ namespace Telegram.Bot.Types
         /// Optional. Video width
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Width { get; set; }
+        public int Width { get; init; }
 
         /// <summary>
         /// Optional. Video height
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Height { get; set; }
+        public int Height { get; init; }
 
         /// <summary>
         /// Optional. Video duration
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Duration { get; set; }
+        public int Duration { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMedia Thumb { get; set; }
+        public InputMedia Thumb { get; init; }
 
         /// <summary>
         /// Optional. Pass True, if the uploaded video is suitable for streaming
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool SupportsStreaming { get; set; }
+        public bool SupportsStreaming { get; init; }
 
         /// <summary>
         /// Initializes a new video media to send

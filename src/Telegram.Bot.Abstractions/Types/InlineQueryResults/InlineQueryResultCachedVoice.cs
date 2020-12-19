@@ -14,25 +14,25 @@ namespace Telegram.Bot.Types.InlineQueryResults
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// A valid file identifier for the voice message
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string VoiceFileId { get; set; }
+        public string VoiceFileId { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultCachedVoice()
             : base(InlineQueryResultType.Voice)

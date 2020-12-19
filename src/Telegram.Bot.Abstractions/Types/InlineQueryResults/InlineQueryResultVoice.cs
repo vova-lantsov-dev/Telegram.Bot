@@ -19,29 +19,29 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// A valid URL for the voice recording
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string VoiceUrl { get; set; }
+        public string VoiceUrl { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// Optional. Recording duration in seconds
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int VoiceDuration { get; set; }
+        public int VoiceDuration { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         /// <summary>
         /// Initializes a new inline query result

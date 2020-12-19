@@ -8,11 +8,11 @@ namespace Telegram.Bot.Types.InlineQueryResults.Abstractions
         /// <summary>
         /// Latitude of the location in degrees
         /// </summary>
-        float Latitude { get; set; }
+        float Latitude { get; init; }
 
         /// <summary>
         /// Longitude of the location in degrees
         /// </summary>
-        float Longitude { get; set; }
+        float Longitude { get; init; }
     }
 }

@@ -14,31 +14,31 @@ namespace Telegram.Bot.Types.InlineQueryResults
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// A valid file identifier for the video file
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string VideoFileId { get; set; }
+        public string VideoFileId { get; init; }
 
         /// <summary>
         /// Optional. Short description of the result
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Description { get; set; }
+        public string Description { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultCachedVideo()
             : base(InlineQueryResultType.Video)

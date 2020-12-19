@@ -13,11 +13,11 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// A valid file identifier of the sticker
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string StickerFileId { get; set; }
+        public string StickerFileId { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultCachedSticker()
             : base(InlineQueryResultType.Sticker)

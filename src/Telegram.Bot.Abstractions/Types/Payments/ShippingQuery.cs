@@ -10,24 +10,24 @@
         /// Unique query identifier
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Id { get; set; }
+        public string Id { get; init; }
 
         /// <summary>
         /// User who sent the query
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public User From { get; set; }
+        public User From { get; init; }
 
         /// <summary>
         /// Bot specified invoice payload
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string InvoicePayload { get; set; }
+        public string InvoicePayload { get; init; }
 
         /// <summary>
         /// User specified shipping address
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public ShippingAddress ShippingAddress { get; set; }
+        public ShippingAddress ShippingAddress { get; init; }
     }
 }

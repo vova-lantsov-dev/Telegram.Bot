@@ -92,8 +92,8 @@ namespace Telegram.Bot.Tests.Integ.Locations
                 messageId: LocationMessage.MessageId
             );
 
-            LocationMessage.Date = message.Date;
-            LocationMessage.EditDate = message.EditDate;
+            LocationMessage = LocationMessage with { Date = message.Date };
+            LocationMessage = LocationMessage with { EditDate = message.EditDate };
             Assert.True(JToken.DeepEquals(
                 JToken.FromObject(LocationMessage), JToken.FromObject(message)
             ));

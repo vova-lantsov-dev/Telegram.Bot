@@ -15,13 +15,13 @@ namespace Telegram.Bot.Types.Passport
         /// "passport_registration", "temporary_registration", "phone_number", "email".
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Type { get; set; }
+        public string Type { get; init; }
 
         /// <summary>
         /// Base64-encoded element hash for using in PassportElementErrorUnspecified
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Hash { get; set; }
+        public string Hash { get; init; }
 
         /// <summary>
         /// Optional. Base64-encoded encrypted Telegram Passport element data provided by the user, available for
@@ -29,19 +29,19 @@ namespace Telegram.Bot.Types.Passport
         /// types. Can be decrypted and verified using the accompanying <see cref="EncryptedCredentials"/>.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Data { get; set; }
+        public string Data { get; init; }
 
         /// <summary>
         /// Optional. User's verified phone number, available only for "phone_number" type.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; init; }
 
         /// <summary>
         /// Optional. User's verified email address, available only for "email" type.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Email { get; set; }
+        public string Email { get; init; }
 
         /// <summary>
         /// Optional. Array of encrypted files with documents provided by the user, available for "utility_bill",
@@ -57,7 +57,7 @@ namespace Telegram.Bot.Types.Passport
         /// verified using the accompanying <see cref="EncryptedCredentials"/>.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public PassportFile FrontSide { get; set; }
+        public PassportFile FrontSide { get; init; }
 
         /// <summary>
         /// Optional. Encrypted file with the reverse side of the document, provided by the user. Available for
@@ -65,7 +65,7 @@ namespace Telegram.Bot.Types.Passport
         /// <see cref="EncryptedCredentials"/>.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public PassportFile ReverseSide { get; set; }
+        public PassportFile ReverseSide { get; init; }
 
         /// <summary>
         /// Optional. Encrypted file with the selfie of the user holding a document, provided by the user;
@@ -73,7 +73,7 @@ namespace Telegram.Bot.Types.Passport
         /// be decrypted and verified using the accompanying <see cref="EncryptedCredentials"/>.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public PassportFile Selfie { get; set; }
+        public PassportFile Selfie { get; init; }
 
         /// <summary>
         /// Optional. Array of encrypted files with translated versions of documents provided by the user.

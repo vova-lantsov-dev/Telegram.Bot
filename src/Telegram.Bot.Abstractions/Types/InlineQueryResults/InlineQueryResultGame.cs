@@ -10,7 +10,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// Short name of the game
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string GameShortName { get; set; }
+        public string GameShortName { get; init; }
 
         private InlineQueryResultGame()
             : base(InlineQueryResultType.Game)

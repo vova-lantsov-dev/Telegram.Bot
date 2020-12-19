@@ -10,12 +10,12 @@ namespace Telegram.Bot.Types
         /// Option text, 1-100 characters
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Text { get; set; }
+        public string Text { get; init; }
 
         /// <summary>
         /// Number of users that voted for this option
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int VoterCount { get; set; }
+        public int VoterCount { get; init; }
     }
 }

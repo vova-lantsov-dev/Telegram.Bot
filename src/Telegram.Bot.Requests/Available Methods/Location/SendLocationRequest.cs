@@ -36,19 +36,19 @@ namespace Telegram.Bot.Requests
         /// Period in seconds for which the location will be updated, should be between 60 and 86400
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int LivePeriod { get; set; }
+        public int LivePeriod { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool DisableNotification { get; set; }
+        public bool DisableNotification { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ReplyToMessageId { get; set; }
+        public int ReplyToMessageId { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public IReplyMarkup ReplyMarkup { get; set; }
+        public IReplyMarkup ReplyMarkup { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId and location

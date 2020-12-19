@@ -8,25 +8,25 @@ namespace Telegram.Bot.Types.ReplyMarkups
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Text { get; set; }
+        public string Text { get; init; }
 
         /// <summary>
         /// If <c>true</c>, the user's current location will be sent when the button is pressed. Available in private chats only
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool RequestLocation { get; set; }
+        public bool RequestLocation { get; init; }
 
         /// <summary>
         /// If <c>true</c>, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool RequestContact { get; set; }
+        public bool RequestContact { get; init; }
 
         /// <summary>
         /// Optional. If specified, the user will be asked to create a poll and send it to the bot when the button is pressed. Available in private chats only
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public KeyboardButtonPollType RequestPoll { get; set; }
+        public KeyboardButtonPollType RequestPoll { get; init; }
 
         /// <summary>
         /// Initializes a new <see cref="KeyboardButton"/>

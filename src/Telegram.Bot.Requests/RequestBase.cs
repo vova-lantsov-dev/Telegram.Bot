@@ -53,7 +53,7 @@ namespace Telegram.Bot.Requests
         /// Allows this object to be used as a response in webhooks
         /// </summary>
         //[JsonIgnore]
-        public bool IsWebhookResponse { get; set; }
+        public bool IsWebhookResponse { get; init; }
 
         /// <summary>
         /// If <see cref="IsWebhookResponse"/> is set to <see langword="true"/> is set to the method

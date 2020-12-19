@@ -11,12 +11,12 @@
         /// Photo width
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int Width { get; set; }
+        public int Width { get; init; }
 
         /// <summary>
         /// Photo height
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int Height { get; set; }
+        public int Height { get; init; }
     }
 }

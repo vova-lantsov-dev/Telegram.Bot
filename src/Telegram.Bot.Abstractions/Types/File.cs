@@ -10,6 +10,6 @@
         /// File path. Use <see cref="TelegramBotClient.GetFileAsync"/> to get the file.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string FilePath { get; set; }
+        public string FilePath { get; init; }
     }
 }

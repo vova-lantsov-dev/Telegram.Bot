@@ -48,26 +48,26 @@ namespace Telegram.Bot.Requests
         /// Foursquare identifier of the venue
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string FoursquareId { get; set; }
+        public string FoursquareId { get; init; }
 
         /// <summary>
         /// Optional. Foursquare type of the venue. (For example, "arts_entertainment/default",
         /// "arts_entertainment/aquarium" or "food/icecream".)
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string FoursquareType { get; set; }
+        public string FoursquareType { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool DisableNotification { get; set; }
+        public bool DisableNotification { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ReplyToMessageId { get; set; }
+        public int ReplyToMessageId { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public IReplyMarkup ReplyMarkup { get; set; }
+        public IReplyMarkup ReplyMarkup { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId, location, venue title and address

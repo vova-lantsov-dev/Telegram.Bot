@@ -25,7 +25,7 @@ namespace Telegram.Bot.Requests
         /// Required if ok is False. Error message in human readable form that explains the reason for failure to proceed with the checkout (e.g. "Sorry, somebody just bought the last of our amazing black T-shirts while you were busy filling out your payment details. Please choose a different color or garment!"). Telegram will display this message to the user.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get; init; }
 
         private AnswerPreCheckoutQueryRequest()
             : base("answerPreCheckoutQuery")

@@ -39,68 +39,68 @@ namespace Telegram.Bot.Requests
         /// Optional. True, if the poll needs to be anonymous, defaults to True
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? IsAnonymous { get; set; }
+        public bool? IsAnonymous { get; init; }
 
         /// <summary>
         /// Optional. Poll type, <see cref="PollType.Quiz"/> or <see cref="PollType.Regular"/>, defaults to <see cref="PollType.Regular"/>
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public PollType? Type { get; set; }
+        public PollType? Type { get; init; }
 
         /// <summary>
         /// Optional. True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? AllowsMultipleAnswers { get; set; }
+        public bool? AllowsMultipleAnswers { get; init; }
 
         /// <summary>
         /// Optional. 0-based identifier of the correct answer option, required for polls in quiz mode
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int? CorrectOptionId { get; set; }
+        public int? CorrectOptionId { get; init; }
 
         /// <summary>
         /// Optional. Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after entities parsing
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Explanation { get; set; }
+        public string Explanation { get; init; }
 
         /// <summary>
         /// Optional. Mode for parsing entities in the explanation
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ExplanationParseMode { get; set; }
+        public ParseMode ExplanationParseMode { get; init; }
 
         /// <summary>
         /// Optional. Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with <see cref="CloseDate"/>.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int? OpenPeriod { get; set; }
+        public int? OpenPeriod { get; init; }
 
         /// <summary>
         /// Optional. Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can't be used together with <see cref="OpenPeriod"/>.
         /// </summary>
         //[JsonConverter(typeof(UnixDateTimeConverter))]
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public DateTime? CloseDate { get; set; }
+        public DateTime? CloseDate { get; init; }
 
         /// <summary>
         /// Optional. Pass True, if the poll needs to be immediately closed
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? IsClosed { get; set; }
+        public bool? IsClosed { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool DisableNotification { get; set; }
+        public bool DisableNotification { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ReplyToMessageId { get; set; }
+        public int ReplyToMessageId { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public IReplyMarkup ReplyMarkup { get; set; }
+        public IReplyMarkup ReplyMarkup { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId, question and <see cref="PollOption"/>

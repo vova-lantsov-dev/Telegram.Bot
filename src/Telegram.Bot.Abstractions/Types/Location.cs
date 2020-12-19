@@ -10,12 +10,12 @@
         /// Longitude as defined by sender
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public float Longitude { get; set; }
+        public float Longitude { get; init; }
 
         /// <summary>
         /// Latitude as defined by sender
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public float Latitude { get; set; }
+        public float Latitude { get; init; }
     }
 }

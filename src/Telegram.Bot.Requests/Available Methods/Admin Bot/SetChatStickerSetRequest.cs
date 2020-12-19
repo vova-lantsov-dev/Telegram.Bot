@@ -13,13 +13,13 @@ namespace Telegram.Bot.Requests
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public ChatId ChatId { get; set; }
+        public ChatId ChatId { get; init; }
 
         /// <summary>
         /// Name of the sticker set to be set as the group sticker set
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string StickerSetName { get; set; }
+        public string StickerSetName { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId and new stickerSetName

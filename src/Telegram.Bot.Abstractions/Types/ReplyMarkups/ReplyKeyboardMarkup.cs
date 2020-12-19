@@ -19,13 +19,13 @@ namespace Telegram.Bot.Types.ReplyMarkups
         /// Optional. Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of <see cref="KeyboardButton"/>). Defaults to <c>false</c>, in which case the custom keyboard is always of the same height as the app's standard keyboard.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool ResizeKeyboard { get; set; }
+        public bool ResizeKeyboard { get; init; }
 
         /// <summary>
         /// Optional. Requests clients to hide the keyboard as soon as it's been used. Defaults to <c>false</c>.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool OneTimeKeyboard { get; set; }
+        public bool OneTimeKeyboard { get; init; }
 
         /// <summary>
         /// Initializes a new instance of <see cref="ReplyKeyboardMarkup"/>

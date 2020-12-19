@@ -25,7 +25,7 @@
         /// How long the live location will be updated
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int LivePeriod { get; set; }
+        public int LivePeriod { get; init; }
 
         private InputLocationMessageContent()
         { }

@@ -17,41 +17,41 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// Contact's phone number
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; init; }
 
         /// <summary>
         /// Contact's first name
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string FirstName { get; set; }
+        public string FirstName { get; init; }
 
         /// <summary>
         /// Optional. Contact's last name
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string LastName { get; set; }
+        public string LastName { get; init; }
 
         /// <summary>
         /// Optional. Additional data about the contact in the form of a vCard, 0-2048 bytes
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Vcard { get; set; }
+        public string Vcard { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ThumbUrl { get; set; }
+        public string ThumbUrl { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ThumbWidth { get; set; }
+        public int ThumbWidth { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ThumbHeight { get; set; }
+        public int ThumbHeight { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultContact()
             : base(InlineQueryResultType.Contact)

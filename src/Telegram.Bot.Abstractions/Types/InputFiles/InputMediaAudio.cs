@@ -13,23 +13,23 @@ namespace Telegram.Bot.Types
         /// Optional. Title of the audio
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Title { get; set; }
+        public int Title { get; init; }
 
         /// <summary>
         /// Optional. Performer of the audio
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Performer { get; set; }
+        public int Performer { get; init; }
 
         /// <summary>
         /// Optional. Duration of the audio in seconds
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Duration { get; set; }
+        public int Duration { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMedia Thumb { get; set; }
+        public InputMedia Thumb { get; init; }
 
         /// <summary>
         /// Initializes a new audio media to send with an <see cref="InputMedia"/>

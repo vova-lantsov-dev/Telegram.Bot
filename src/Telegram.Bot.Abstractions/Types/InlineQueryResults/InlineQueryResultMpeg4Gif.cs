@@ -23,13 +23,13 @@ namespace Telegram.Bot.Types.InlineQueryResults
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string ThumbUrl { get; set; }
+        public string ThumbUrl { get; init; }
 
         /// <summary>
         /// Optional. MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ThumbMimeType { get; set; }
+        public string ThumbMimeType { get; init; }
 
         /// <summary>
         /// Optional. Video width
@@ -51,19 +51,19 @@ namespace Telegram.Bot.Types.InlineQueryResults
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultMpeg4Gif()
             : base(InlineQueryResultType.Mpeg4Gif)

@@ -27,7 +27,7 @@ namespace Telegram.Bot.Requests
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InlineKeyboardMarkup ReplyMarkup { get; set; }
+        public InlineKeyboardMarkup ReplyMarkup { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId, messageId and new text

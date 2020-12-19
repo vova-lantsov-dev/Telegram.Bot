@@ -12,6 +12,6 @@
         /// Example: A user requests to change the bot's language, bot replies to the request with a keyboard to select the new language. Other users in the group don't see the keyboard.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool Selective { get; set; }
+        public bool Selective { get; init; }
     }
 }

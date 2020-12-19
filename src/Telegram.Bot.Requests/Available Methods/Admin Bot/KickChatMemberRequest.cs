@@ -27,7 +27,7 @@ namespace Telegram.Bot.Requests
         /// </summary>
         //[JsonConverter(typeof(UnixDateTimeConverter))]
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public DateTime UntilDate { get; set; }
+        public DateTime UntilDate { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId and userId

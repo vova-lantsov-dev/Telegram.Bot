@@ -11,25 +11,25 @@
         /// Sticker set name
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Name { get; set; }
+        public string Name { get; init; }
 
         /// <summary>
         /// Sticker set title
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// True, if the sticker set contains animated stickers
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public bool IsAnimated { get; set; }
+        public bool IsAnimated { get; init; }
 
         /// <summary>
         /// True, if the sticker set contains masks
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public bool ContainsMasks { get; set; }
+        public bool ContainsMasks { get; init; }
 
         /// <summary>
         /// List of all set stickers
@@ -41,6 +41,6 @@
         /// Optional. Sticker set thumbnail in the .WEBP or .TGS format
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public PhotoSize Thumb { get; set; }
+        public PhotoSize Thumb { get; init; }
     }
 }

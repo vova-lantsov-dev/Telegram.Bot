@@ -12,6 +12,6 @@ namespace Telegram.Bot.Requests.Abstractions
         /// thumbnail's width and height should not exceed 90. Thumbnails can't be reused and can be only uploaded as
         /// a new file.
         /// </summary>
-        InputMedia Thumb { get; set; }
+        InputMedia Thumb { get; init; }
     }
 }

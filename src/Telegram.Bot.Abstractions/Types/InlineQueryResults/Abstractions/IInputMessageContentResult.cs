@@ -8,6 +8,6 @@ namespace Telegram.Bot.Types.InlineQueryResults.Abstractions
         /// <summary>
         /// Content of the message to be sent
         /// </summary>
-        InputMessageContentBase InputMessageContent { get; set; }
+        InputMessageContentBase InputMessageContent { get; init; }
     }
 }

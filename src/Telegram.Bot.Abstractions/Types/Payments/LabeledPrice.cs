@@ -11,13 +11,13 @@ namespace Telegram.Bot.Types.Payments
         /// Portion label
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Label { get; set; }
+        public string Label { get; init; }
 
         /// <summary>
         /// Price of the product in the smallest units of the <see href="https://core.telegram.org/bots/payments#supported-currencies">currency</see>.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int Amount { get; set; }
+        public int Amount { get; init; }
 
         /// <summary>
         /// Initializes an instance of <see cref="LabeledPrice"/>

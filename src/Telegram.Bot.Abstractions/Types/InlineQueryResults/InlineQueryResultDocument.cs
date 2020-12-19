@@ -20,47 +20,47 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// A valid URL for the file
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string DocumentUrl { get; set; }
+        public string DocumentUrl { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// Mime type of the content of the file, either “application/pdf” or “application/zip”
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string MimeType { get; set; }
+        public string MimeType { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <summary>
         /// Optional. Short description of the result
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Description { get; set; }
+        public string Description { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ThumbUrl { get; set; }
+        public string ThumbUrl { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ThumbWidth { get; set; }
+        public int ThumbWidth { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ThumbHeight { get; set; }
+        public int ThumbHeight { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultDocument()
             : base(InlineQueryResultType.Document)

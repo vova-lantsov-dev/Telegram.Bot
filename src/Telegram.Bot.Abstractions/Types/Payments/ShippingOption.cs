@@ -10,13 +10,13 @@
         /// Shipping option identifier
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Id { get; set; }
+        public string Id { get; init; }
 
         /// <summary>
         /// Option title
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// List of price portions

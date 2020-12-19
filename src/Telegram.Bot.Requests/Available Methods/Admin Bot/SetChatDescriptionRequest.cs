@@ -19,7 +19,7 @@ namespace Telegram.Bot.Requests
         /// New chat Description, 0-255 characters
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Description { get; set; }
+        public string Description { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId and new title

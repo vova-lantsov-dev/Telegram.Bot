@@ -15,19 +15,19 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// A valid file identifier for the audio file
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string AudioFileId { get; set; }
+        public string AudioFileId { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultCachedAudio()
             : base(InlineQueryResultType.Audio)

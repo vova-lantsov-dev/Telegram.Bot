@@ -10,19 +10,19 @@
         /// ISO 3166-1 alpha-2 country code
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string CountryCode { get; set; }
+        public string CountryCode { get; init; }
 
         /// <summary>
         /// State, if applicable
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string State { get; set; }
+        public string State { get; init; }
 
         /// <summary>
         /// City
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string City { get; set; }
+        public string City { get; init; }
 
         /// <summary>
         /// First line for the address
@@ -40,6 +40,6 @@
         /// Address post code
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string PostCode { get; set; }
+        public string PostCode { get; init; }
     }
 }

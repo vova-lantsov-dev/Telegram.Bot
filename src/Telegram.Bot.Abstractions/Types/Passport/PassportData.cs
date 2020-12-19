@@ -19,6 +19,6 @@ namespace Telegram.Bot.Types.Passport
         /// Encrypted credentials required to decrypt the data.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public EncryptedCredentials Credentials { get; set; }
+        public EncryptedCredentials Credentials { get; init; }
     }
 }

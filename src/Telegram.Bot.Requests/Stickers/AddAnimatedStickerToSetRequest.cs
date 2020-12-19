@@ -39,7 +39,7 @@ namespace Telegram.Bot.Requests
         /// One or more emoji corresponding to the sticker
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public MaskPosition MaskPosition { get; set; }
+        public MaskPosition MaskPosition { get; init; }
 
         /// <summary>
         /// Initializes a new request with userId, name tgsSticker and emojis

@@ -28,7 +28,7 @@ namespace Telegram.Bot.Requests
         /// Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int MaxConnections { get; set; }
+        public int MaxConnections { get; init; }
 
         /// <summary>
         /// List the types of updates you want your bot to receive

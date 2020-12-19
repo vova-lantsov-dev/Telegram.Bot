@@ -24,7 +24,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// Inline keyboard attached to the message
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InlineKeyboardMarkup ReplyMarkup { get; set; }
+        public InlineKeyboardMarkup ReplyMarkup { get; init; }
 
         ///  <summary>
         /// Initializes a new inline query result

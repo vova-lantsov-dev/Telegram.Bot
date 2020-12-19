@@ -10,7 +10,7 @@
         /// Total number of profile pictures the target user has
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int TotalCount { get; set; }
+        public int TotalCount { get; init; }
 
         /// <summary>
         /// Requested profile pictures (in up to 4 sizes each)

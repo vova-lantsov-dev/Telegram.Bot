@@ -10,18 +10,18 @@
         /// Video width and height as defined by sender
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int Length { get; set; }
+        public int Length { get; init; }
 
         /// <summary>
         /// Duration of the video in seconds as defined by sender
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int Duration { get; set; }
+        public int Duration { get; init; }
 
         /// <summary>
         /// Optional. Video thumbnail
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public PhotoSize Thumb { get; set; }
+        public PhotoSize Thumb { get; init; }
     }
 }

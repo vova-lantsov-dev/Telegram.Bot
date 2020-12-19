@@ -10,12 +10,12 @@
         /// Duration of the audio in seconds as defined by sender
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int Duration { get; set; }
+        public int Duration { get; init; }
 
         /// <summary>
         /// Optional. MIME type of the file as defined by sender
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string MimeType { get; set; }
+        public string MimeType { get; init; }
     }
 }

@@ -8,25 +8,25 @@
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Text { get; set; }
+        public string Text { get; init; }
 
         /// <summary>
         /// Optional. HTTP url to be opened when button is pressed
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Url { get; set; }
+        public string Url { get; init; }
 
         /// <summary>
         /// Optional. An HTTP URL used to automatically authorize the user
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public LoginUrl LoginUrl { get; set; }
+        public LoginUrl LoginUrl { get; init; }
 
         /// <summary>
         /// Optional. Data to be sent in a callback query to the bot when button is pressed
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string CallbackData { get; set; }
+        public string CallbackData { get; init; }
 
         /// <summary>
         /// If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot's username and the specified <see cref="InlineQuery"/> in the input field. Can be empty, in which case just the bot's username will be inserted.
@@ -35,7 +35,7 @@
         /// Note: This offers an easy way for users to start using your bot in inline mode when they are currently in a private chat with it. Especially useful when combined with switchPm[...] parameters (see <see cref="TelegramBotClient.AnswerInlineQueryAsync"/>)  – in this case the user will be automatically returned to the chat they switched from, skipping the chat selection screen.
         /// </remarks>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string SwitchInlineQuery { get; set; }
+        public string SwitchInlineQuery { get; init; }
 
         /// <summary>
         /// Optional. If set, pressing the button will insert the bot's username and the specified inline query in the current chat's input field. Can be empty, in which case only the bot’s username will be inserted.
@@ -44,7 +44,7 @@
         /// Note: This offers a quick way for the user to open your bot in inline mode in the same chat – good for selecting something from multiple options.
         /// </remarks>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string SwitchInlineQueryCurrentChat { get; set; }
+        public string SwitchInlineQueryCurrentChat { get; init; }
 
         /// <summary>
         /// Optional. Description of the game that will be launched when the user presses the button.
@@ -53,7 +53,7 @@
         /// Note: This type of button must always be the first button in the first row.
         /// </remarks>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public CallbackGame CallbackGame { get; set; }
+        public CallbackGame CallbackGame { get; init; }
 
         /// <summary>
         /// Optional. Specify True, to send a Pay button.
@@ -62,7 +62,7 @@
         /// Note: This type of button must always be the first button in the first row.
         /// </remarks>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool Pay { get; set; }
+        public bool Pay { get; init; }
 
         /// <summary>
         /// Creates an inline keyboard button that opens a HTTP url when pressed

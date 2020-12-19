@@ -45,13 +45,13 @@ namespace Telegram.Bot.Requests
         /// Pass True, if a set of mask stickers should be created
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool ContainsMasks { get; set; }
+        public bool ContainsMasks { get; init; }
 
         /// <summary>
         /// One or more emoji corresponding to the sticker
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public MaskPosition MaskPosition { get; set; }
+        public MaskPosition MaskPosition { get; init; }
 
         /// <summary>
         /// Initializes a new request with userId, name, tgsSticker and emojis

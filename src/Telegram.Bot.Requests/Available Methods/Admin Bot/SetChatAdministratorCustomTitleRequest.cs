@@ -19,7 +19,7 @@ namespace Telegram.Bot.Requests
         /// Unique identifier of the target user
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int UserId { get; set; }
+        public int UserId { get; init; }
 
         /// <summary>
         /// New custom title for the administrator; 0-16 characters, emoji are not allowed

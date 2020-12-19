@@ -8,11 +8,11 @@ namespace Telegram.Bot.Types.InlineQueryResults.Abstractions
         /// <summary>
         /// Optional. Thumbnail width.
         /// </summary>
-        int ThumbWidth { get; set; }
+        int ThumbWidth { get; init; }
 
         /// <summary>
         /// Optional. Thumbnail height.
         /// </summary>
-        int ThumbHeight { get; set; }
+        int ThumbHeight { get; init; }
     }
 }

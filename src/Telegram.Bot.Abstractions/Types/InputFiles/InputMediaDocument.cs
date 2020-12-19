@@ -11,7 +11,7 @@ namespace Telegram.Bot.Types
     {
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMedia Thumb { get; set; }
+        public InputMedia Thumb { get; init; }
 
         /// <summary>
         /// Initializes a new document media to send with an <see cref="InputMedia"/>

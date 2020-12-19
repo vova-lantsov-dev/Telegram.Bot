@@ -13,41 +13,41 @@ namespace Telegram.Bot.Types.InlineQueryResults
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         /// <summary>
         /// Optional. URL of the result.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Url { get; set; }
+        public string Url { get; init; }
 
         /// <summary>
         /// Optional. Pass <c>true</c>, if you don't want the URL to be shown in the message.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool HideUrl { get; set; }
+        public bool HideUrl { get; init; }
 
         /// <summary>
         /// Optional. Short description of the result.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Description { get; set; }
+        public string Description { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ThumbUrl { get; set; }
+        public string ThumbUrl { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ThumbWidth { get; set; }
+        public int ThumbWidth { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ThumbHeight { get; set; }
+        public int ThumbHeight { get; init; }
 
         private InlineQueryResultArticle()
             : base(InlineQueryResultType.Article)

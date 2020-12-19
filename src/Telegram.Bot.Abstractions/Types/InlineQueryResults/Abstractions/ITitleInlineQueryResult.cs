@@ -8,6 +8,6 @@ namespace Telegram.Bot.Types.InlineQueryResults.Abstractions
         /// <summary>
         /// Title of the result
         /// </summary>
-        string Title { get; set; }
+        string Title { get; init; }
     }
 }

@@ -11,30 +11,30 @@
         /// Product name
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// Product description
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Description { get; set; }
+        public string Description { get; init; }
 
         /// <summary>
         /// Unique bot deep-linking parameter that can be used to generate this invoice
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string StartParameter { get; set; }
+        public string StartParameter { get; init; }
 
         /// <summary>
         /// Three-letter ISO 4217 currency code
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Currency { get; set; }
+        public string Currency { get; init; }
 
         /// <summary>
         /// Total price in the smallest units of the currency.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int TotalAmount { get; set; }
+        public int TotalAmount { get; init; }
     }
 }

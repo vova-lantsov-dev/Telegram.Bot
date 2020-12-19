@@ -25,49 +25,49 @@ namespace Telegram.Bot.Requests
         /// Pass True, if the administrator can change chat title, photo and other settings
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanChangeInfo { get; set; }
+        public bool? CanChangeInfo { get; init; }
 
         /// <summary>
         /// Pass True, if the administrator can create channel posts, channels only
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanPostMessages { get; set; }
+        public bool? CanPostMessages { get; init; }
 
         /// <summary>
         /// Pass True, if the administrator can edit messages of other users and can pin messages, channels only
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanEditMessages { get; set; }
+        public bool? CanEditMessages { get; init; }
 
         /// <summary>
         /// Pass True, if the administrator can delete messages of other users
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanDeleteMessages { get; set; }
+        public bool? CanDeleteMessages { get; init; }
 
         /// <summary>
         /// Pass True, if the administrator can invite new users to the chat
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanInviteUsers { get; set; }
+        public bool? CanInviteUsers { get; init; }
 
         /// <summary>
         /// Pass True, if the administrator can restrict, ban or unban chat members
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanRestrictMembers { get; set; }
+        public bool? CanRestrictMembers { get; init; }
 
         /// <summary>
         /// Pass True, if the administrator can pin messages, supergroups only
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanPinMessages { get; set; }
+        public bool? CanPinMessages { get; init; }
 
         /// <summary>
         /// Pass True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him)
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanPromoteMembers { get; set; }
+        public bool? CanPromoteMembers { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId and userId

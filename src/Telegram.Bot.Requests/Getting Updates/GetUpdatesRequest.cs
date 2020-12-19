@@ -15,19 +15,19 @@ namespace Telegram.Bot.Requests
         /// Identifier of the first update to be returned
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Offset { get; set; }
+        public int Offset { get; init; }
 
         /// <summary>
         /// Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Limit { get; set; }
+        public int Limit { get; init; }
 
         /// <summary>
         /// Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Timeout { get; set; }
+        public int Timeout { get; init; }
 
         /// <summary>
         /// List the types of updates you want your bot to receive. Specify an empty list to receive all updates regardless of type (default). If not specified, the previous setting will be used.

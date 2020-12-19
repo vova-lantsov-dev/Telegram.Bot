@@ -13,38 +13,38 @@ namespace Telegram.Bot.Types
         /// Webhook URL, may be empty if webhook is not set up
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Url { get; set; }
+        public string Url { get; init; }
 
         /// <summary>
         /// True, if a custom certificate was provided for webhook certificate checks
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public bool HasCustomCertificate { get; set; }
+        public bool HasCustomCertificate { get; init; }
 
         /// <summary>
         /// Number of updates awaiting delivery
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int PendingUpdateCount { get; set; }
+        public int PendingUpdateCount { get; init; }
 
         /// <summary>
         /// Unix time for the most recent error that happened when trying to deliver an update via webhook
         /// </summary>
         //[JsonConverter(typeof(UnixDateTimeConverter))]
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public DateTime LastErrorDate { get; set; }
+        public DateTime LastErrorDate { get; init; }
 
         /// <summary>
         /// Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string LastErrorMessage { get; set; }
+        public string LastErrorMessage { get; init; }
 
         /// <summary>
         /// Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int MaxConnections { get; set; }
+        public int MaxConnections { get; init; }
 
         /// <summary>
         /// A list of update types the bot is subscribed to. Defaults to all update types

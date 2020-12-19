@@ -10,18 +10,18 @@
         /// Document thumbnail as defined by sender
         /// </summary>
         //[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public PhotoSize Thumb { get; set; }
+        public PhotoSize Thumb { get; init; }
 
         /// <summary>
         /// Optional. Original filename as defined by sender
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string FileName { get; set; }
+        public string FileName { get; init; }
 
         /// <summary>
         /// Optional. MIME type of the file as defined by sender
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string MimeType { get; set; }
+        public string MimeType { get; init; }
     }
 }

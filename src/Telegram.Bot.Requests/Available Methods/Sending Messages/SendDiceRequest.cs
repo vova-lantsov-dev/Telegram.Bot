@@ -25,19 +25,19 @@ namespace Telegram.Bot.Requests
         /// Optional. Emoji on which the dice throw animation is based. Currently, must be one of <see cref="Telegram.Bot.Types.Enums.Emoji.Dice"/> or <see cref="Telegram.Bot.Types.Enums.Emoji.Darts"/>. Defauts to <see cref="Telegram.Bot.Types.Enums.Emoji.Dice"/>
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public Emoji? Emoji { get; set; }
+        public Emoji? Emoji { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool DisableNotification { get; set; }
+        public bool DisableNotification { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ReplyToMessageId { get; set; }
+        public int ReplyToMessageId { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public IReplyMarkup ReplyMarkup { get; set; }
+        public IReplyMarkup ReplyMarkup { get; init; }
 
         /// <summary>
         /// Initializes a new request with chatId

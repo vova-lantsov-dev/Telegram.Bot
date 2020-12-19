@@ -14,6 +14,6 @@ namespace Telegram.Bot.Types.Passport
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
         //[JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime FileDate { get; set; }
+        public DateTime FileDate { get; init; }
     }
 }

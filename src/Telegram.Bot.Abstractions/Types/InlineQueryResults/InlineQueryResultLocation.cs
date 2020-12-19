@@ -17,37 +17,37 @@ namespace Telegram.Bot.Types.InlineQueryResults
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public float Latitude { get; set; }
+        public float Latitude { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public float Longitude { get; set; }
+        public float Longitude { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <summary>
         /// Period in seconds for which the location can be updated, should be between 60 and 86400.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int LivePeriod { get; set; }
+        public int LivePeriod { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ThumbUrl { get; set; }
+        public string ThumbUrl { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ThumbWidth { get; set; }
+        public int ThumbWidth { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ThumbHeight { get; set; }
+        public int ThumbHeight { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultLocation()
             : base(InlineQueryResultType.Location)

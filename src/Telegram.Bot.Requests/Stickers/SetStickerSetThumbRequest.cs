@@ -27,7 +27,7 @@ namespace Telegram.Bot.Requests
         /// A PNG image or a TGS animation with the thumbnail
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputOnlineFile Thumb { get; set; }
+        public InputOnlineFile Thumb { get; init; }
 
         /// <summary>
         /// Initializes a new request with sticker and position

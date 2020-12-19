@@ -30,13 +30,13 @@ namespace Telegram.Bot.Requests
         /// Pass True, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool Force { get; set; }
+        public bool Force { get; init; }
 
         /// <summary>
         /// Pass True, if the game message should not be automatically edited to include the current scoreboard
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool DisableEditMessage { get; set; }
+        public bool DisableEditMessage { get; init; }
 
         /// <summary>
         /// Initializes a new request with userId, inlineMessageId and new score

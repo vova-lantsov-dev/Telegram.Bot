@@ -19,51 +19,51 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// A valid URL for the GIF file. File size must not exceed 1MB
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string GifUrl { get; set; }
+        public string GifUrl { get; init; }
 
         /// <summary>
         /// Optional. Width of the GIF.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int GifWidth { get; set; }
+        public int GifWidth { get; init; }
 
         /// <summary>
         /// Optional. Height of the GIF.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int GifHeight { get; set; }
+        public int GifHeight { get; init; }
 
         /// <summary>
         /// Optional. Duration of the GIF.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int GifDuration { get; set; }
+        public int GifDuration { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Caption { get; set; }
+        public string Caption { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public ParseMode ParseMode { get; set; }
+        public ParseMode ParseMode { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
-        public string ThumbUrl { get; set; }
+        public string ThumbUrl { get; init; }
 
         /// <summary>
         /// Optional. MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ThumbMimeType { get; set; }
+        public string ThumbMimeType { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Title { get; set; }
+        public string Title { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public InputMessageContentBase InputMessageContent { get; set; }
+        public InputMessageContentBase InputMessageContent { get; init; }
 
         private InlineQueryResultGif()
             : base(InlineQueryResultType.Gif)

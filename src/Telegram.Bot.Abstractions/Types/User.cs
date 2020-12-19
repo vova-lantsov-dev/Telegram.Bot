@@ -12,55 +12,55 @@ namespace Telegram.Bot.Types
         /// Unique identifier for this user or bot
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         /// <summary>
         /// True, if this user is a bot
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public bool IsBot { get; set; }
+        public bool IsBot { get; init; }
 
         /// <summary>
         /// User's or bot's first name
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string FirstName { get; set; }
+        public string FirstName { get; init; }
 
         /// <summary>
         /// Optional. User's or bot's last name
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string LastName { get; set; }
+        public string LastName { get; init; }
 
         /// <summary>
         /// Optional. User's or bot's username
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Username { get; set; }
+        public string Username { get; init; }
 
         /// <summary>
         /// Optional. IETF language tag of the user's language
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string LanguageCode { get; set; }
+        public string LanguageCode { get; init; }
 
         /// <summary>
         /// Optional. True, if the bot can be invited to groups. Returned only in getMe
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanJoinGroups { get; set; }
+        public bool? CanJoinGroups { get; init; }
 
         /// <summary>
         /// Optional. True, if privacy mode is disabled for the bot. Returned only in getMe
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? CanReadAllGroupMessages { get; set; }
+        public bool? CanReadAllGroupMessages { get; init; }
 
         /// <summary>
         /// Optional. True, if the bot supports inline queries. Returned only in getMe
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? SupportsInlineQueries { get; set; }
+        public bool? SupportsInlineQueries { get; init; }
 
         /// <inheritdoc />
         public override int GetHashCode()

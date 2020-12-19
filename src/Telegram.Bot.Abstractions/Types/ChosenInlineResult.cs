@@ -10,30 +10,30 @@
         /// The unique identifier for the result that was chosen.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string ResultId { get; set; }
+        public string ResultId { get; init; }
 
         /// <summary>
         /// The user that chose the result.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public User From { get; set; }
+        public User From { get; init; }
 
         /// <summary>
         /// Optional. Sender location, only for bots that require user location
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public Location Location { get; set; }
+        public Location Location { get; init; }
 
         /// <summary>
         /// Optional. Identifier of the sent inline message. Available only if there is an inline keyboard attached to the message. Will be also received in callback queries and can be used to edit the message.
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string InlineMessageId { get; set; }
+        public string InlineMessageId { get; init; }
 
         /// <summary>
         /// The query that was used to obtain the result.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Query { get; set; }
+        public string Query { get; init; }
     }
 }

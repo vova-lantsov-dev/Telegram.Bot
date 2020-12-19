@@ -8,6 +8,6 @@ namespace Telegram.Bot.Types.InlineQueryResults.Abstractions
         /// <summary>
         /// URL of the static thumbnail for the result.
         /// </summary>
-        string ThumbUrl { get; set; }
+        string ThumbUrl { get; init; }
     }
 }

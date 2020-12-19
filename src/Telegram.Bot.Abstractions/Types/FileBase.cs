@@ -10,18 +10,18 @@
         /// Identifier for this file, which can be used to download or reuse the file
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string FileId { get; set; }
+        public string FileId { get; init; }
 
         /// <summary>
         /// Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string FileUniqueId { get; set; }
+        public string FileUniqueId { get; init; }
 
         /// <summary>
         /// Optional. File size, if known
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int FileSize { get; set; }
+        public int FileSize { get; init; }
     }
 }
