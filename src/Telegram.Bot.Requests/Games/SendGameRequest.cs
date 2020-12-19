@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Send a game. On success, the sent <see cref="Message"/> is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SendGameRequest : RequestBase<Message>,
+    public sealed partial record SendGameRequest : RequestBase<Message>,
                                    INotifiableMessage,
                                    IReplyMessage,
                                    IInlineReplyMarkupMessage

@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents a game. Use BotFather to create and edit games, their short names will act as unique identifiers.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record Game
+    public sealed partial record Game
     {
         /// <summary>
         /// Title of the game.

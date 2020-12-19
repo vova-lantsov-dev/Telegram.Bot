@@ -4,7 +4,7 @@
     /// This object represents an incoming inline query. When the user sends an empty query, your bot could return some default or trending results.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record InlineQuery
+    public sealed partial record InlineQuery
     {
         /// <summary>
         /// Unique identifier for this query

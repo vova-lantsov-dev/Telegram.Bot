@@ -13,7 +13,7 @@ namespace Telegram.Bot.Requests
     /// Send a group of photos or videos as an album. On success, an array of the sent Messages is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SendMediaGroupRequest : FileRequestBase<Message[]>,
+    public sealed partial record SendMediaGroupRequest : FileRequestBase<Message[]>,
         INotifiableMessage,
         IReplyMessage
     {

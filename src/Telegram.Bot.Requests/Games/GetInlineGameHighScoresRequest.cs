@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Get data for high score tables. Will return the score of the specified user and several of his neighbors in a game. On success, returns an array of <see cref="GameHighScore"/>.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record GetInlineGameHighScoresRequest : RequestBase<GameHighScore[]>,
+    public sealed partial record GetInlineGameHighScoresRequest : RequestBase<GameHighScore[]>,
                                                   IInlineMessage
     {
         /// <summary>

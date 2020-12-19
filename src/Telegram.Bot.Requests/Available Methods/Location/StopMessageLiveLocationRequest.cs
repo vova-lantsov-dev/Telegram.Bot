@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Stop updating a live location message sent by the bot
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record StopMessageLiveLocationRequest : RequestBase<Message>,
+    public sealed partial record StopMessageLiveLocationRequest : RequestBase<Message>,
                                                   IInlineReplyMarkupMessage
     {
         /// <summary>

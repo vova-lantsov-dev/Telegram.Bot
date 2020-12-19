@@ -8,7 +8,7 @@ namespace Telegram.Bot.Types
     /// Media to send in request that could be a file_id, HTTP url, or a file
     /// </summary>
     //[JsonConverter(typeof(InputMediaConverter))]
-    public sealed record InputMedia : InputOnlineFile
+    public sealed partial record InputMedia : InputOnlineFile
     {
         /// <summary>
         /// Initializes media with a file to send

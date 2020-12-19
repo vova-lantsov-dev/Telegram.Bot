@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Forward messages of any kind
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record ForwardMessageRequest : RequestBase<Message>, INotifiableMessage
+    public sealed partial record ForwardMessageRequest : RequestBase<Message>, INotifiableMessage
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)

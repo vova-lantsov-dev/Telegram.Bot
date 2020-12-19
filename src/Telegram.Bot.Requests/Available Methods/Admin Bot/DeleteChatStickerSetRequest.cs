@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Delete a group sticker set from a supergroup
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record DeleteChatStickerSetRequest : RequestBase<bool>
+    public sealed partial record DeleteChatStickerSetRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)

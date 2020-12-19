@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Leave a group, supergroup or channel
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record LeaveChatRequest : RequestBase<bool>
+    public sealed partial record LeaveChatRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)

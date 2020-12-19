@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Tell the user that something is happening on the bot's side
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SendChatActionRequest : RequestBase<bool>
+    public sealed partial record SendChatActionRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel

@@ -11,7 +11,7 @@ namespace Telegram.Bot.Requests
     /// Send invoices. On success, the sent <see cref="Message"/> is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SendInvoiceRequest : RequestBase<Message>,
+    public sealed partial record SendInvoiceRequest : RequestBase<Message>,
                                       INotifiableMessage,
                                       IReplyMessage,
                                       IInlineReplyMarkupMessage

@@ -10,7 +10,7 @@ namespace Telegram.Bot.Types
     /// Only one of the optional parameters can be present in any given update.
     /// </remarks>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record Update
+    public sealed partial record Update
     {
         /// <summary>
         /// The update's unique identifier. Update identifiers start from a certain positive number and increase sequentially.

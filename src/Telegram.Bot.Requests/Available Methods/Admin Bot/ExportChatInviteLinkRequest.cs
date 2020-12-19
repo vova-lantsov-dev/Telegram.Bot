@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Export an invite link to a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record ExportChatInviteLinkRequest : RequestBase<string>
+    public sealed partial record ExportChatInviteLinkRequest : RequestBase<string>
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target channel (in the format @channelusername)

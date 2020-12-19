@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types
     /// This object represents a Telegram user or bot.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record User
+    public sealed partial record User
     {
         /// <summary>
         /// Unique identifier for this user or bot

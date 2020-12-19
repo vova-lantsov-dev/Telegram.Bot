@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types.ReplyMarkups
     /// Represents a custom keyboard with reply options
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record ReplyKeyboardMarkup : ReplyMarkupBase
+    public sealed partial record ReplyKeyboardMarkup : ReplyMarkupBase
     {
         /// <summary>
         /// Array of button rows, each represented by an Array of KeyboardButton objects

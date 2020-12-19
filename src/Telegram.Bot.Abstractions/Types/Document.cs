@@ -4,7 +4,7 @@
     /// This object represents a general file (as opposed to <see cref="PhotoSize"/> and <see cref="Audio"/> files).
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record Document : FileBase
+    public sealed partial record Document : FileBase
     {
         /// <summary>
         /// Document thumbnail as defined by sender

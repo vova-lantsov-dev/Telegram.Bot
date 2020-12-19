@@ -4,7 +4,7 @@
     /// This object represents a file ready to be downloaded. The file can be downloaded via <see cref="TelegramBotClient.GetFileAsync"/>. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling <see cref="TelegramBotClient.GetFileAsync"/>.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record File : FileBase
+    public sealed partial record File : FileBase
     {
         /// <summary>
         /// File path. Use <see cref="TelegramBotClient.GetFileAsync"/> to get the file.

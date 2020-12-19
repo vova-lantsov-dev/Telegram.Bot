@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types
     /// Represents an audio file to be treated as music to be sent
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record InputMediaAudio : InputMediaBase, IInputMediaThumb
+    public sealed partial record InputMediaAudio : InputMediaBase, IInputMediaThumb
     {
         /// <summary>
         /// Optional. Title of the audio

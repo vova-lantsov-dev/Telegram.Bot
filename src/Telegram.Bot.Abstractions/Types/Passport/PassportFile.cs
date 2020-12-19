@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types.Passport
     /// This object represents a file uploaded to Telegram Passport. Currently all Telegram Passport files are in JPEG format when decrypted and don't exceed 10MB.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record PassportFile : FileBase
+    public sealed partial record PassportFile : FileBase
     {
         /// <summary>
         /// Unix time when the file was uploaded

@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types.Passport
     /// Contains information about Telegram Passport data shared with the bot by the user.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record PassportData
+    public sealed partial record PassportData
     {
         /// <summary>
         /// Array with information about documents and other Telegram Passport elements that was shared with the bot.

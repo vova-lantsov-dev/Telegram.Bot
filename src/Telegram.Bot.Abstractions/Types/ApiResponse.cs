@@ -5,7 +5,7 @@
     /// </summary>
     /// <typeparam name="TResult">Expected type of operation result</typeparam>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record ApiResponse<TResult>
+    public sealed partial record ApiResponse<TResult>
     {
         /// <summary>
         /// Gets a value indicating whether the request was successful.

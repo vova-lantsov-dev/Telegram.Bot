@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Send answers to an inline query. On success, True is returned. No more than 50 results per query are allowed.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record AnswerInlineQueryRequest : RequestBase<bool>
+    public sealed partial record AnswerInlineQueryRequest : RequestBase<bool>
     {
         /// <summary>
         /// Unique identifier for the answered query

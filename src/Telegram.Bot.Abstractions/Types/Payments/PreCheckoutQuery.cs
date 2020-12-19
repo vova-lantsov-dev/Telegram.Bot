@@ -4,7 +4,7 @@
     /// This object contains information about an incoming pre-checkout query
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record PreCheckoutQuery
+    public sealed partial record PreCheckoutQuery
     {
         /// <summary>
         /// Unique query identifier

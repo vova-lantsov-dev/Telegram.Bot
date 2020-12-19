@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types.ReplyMarkups
     /// This object represents one button of the reply keyboard. For simple text buttons String can be used instead of this object to specify text of the button.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record KeyboardButton : IKeyboardButton
+    public sealed partial record KeyboardButton : IKeyboardButton
     {
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]

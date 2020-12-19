@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Represents the content of a contact message to be sent as the result of an <see cref="InlineQuery"/>.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record InputContactMessageContent : InputMessageContentBase
+    public sealed partial record InputContactMessageContent : InputMessageContentBase
     {
         /// <summary>
         /// Contact's phone number

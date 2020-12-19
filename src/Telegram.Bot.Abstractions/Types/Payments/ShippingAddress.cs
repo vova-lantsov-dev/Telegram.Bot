@@ -4,7 +4,7 @@
     /// This object represents a shipping address.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record ShippingAddress
+    public sealed partial record ShippingAddress
     {
         /// <summary>
         /// ISO 3166-1 alpha-2 country code
@@ -28,13 +28,13 @@
         /// First line for the address
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string StreetLine1 { get; set; }
+        public string StreetLine1 { get; init; }
 
         /// <summary>
         /// Second line for the address
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string StreetLine2 { get; set; }
+        public string StreetLine2 { get; init; }
 
         /// <summary>
         /// Address post code

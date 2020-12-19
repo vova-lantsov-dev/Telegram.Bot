@@ -4,7 +4,7 @@
     /// This object represent a user's profile pictures.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record UserProfilePhotos
+    public sealed partial record UserProfilePhotos
     {
         /// <summary>
         /// Total number of profile pictures the target user has

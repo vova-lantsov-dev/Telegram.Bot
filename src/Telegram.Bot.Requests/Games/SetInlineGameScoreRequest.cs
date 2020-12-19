@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Set the score of the specified user in a game. On success returns True. Returns an error, if the new score is not greater than the user's current score in the chat and force is False.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SetInlineGameScoreRequest : RequestBase<bool>,
+    public sealed partial record SetInlineGameScoreRequest : RequestBase<bool>,
                                              IInlineMessage
     {
         /// <summary>

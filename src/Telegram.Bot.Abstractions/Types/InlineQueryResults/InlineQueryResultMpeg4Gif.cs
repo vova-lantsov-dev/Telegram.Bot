@@ -9,7 +9,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Alternatively, you can provide message_text to send it instead of the animation.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record InlineQueryResultMpeg4Gif : InlineQueryResultBase,
+    public sealed partial record InlineQueryResultMpeg4Gif : InlineQueryResultBase,
         ICaptionInlineQueryResult,
         IThumbnailUrlInlineQueryResult,
         ITitleInlineQueryResult,
@@ -19,7 +19,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// A valid URL for the MP4 file. File size must not exceed 1MB.
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Mpeg4Url { get; set; }
+        public string Mpeg4Url { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(Required = Required.Always)]
@@ -35,19 +35,19 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// Optional. Video width
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Mpeg4Width { get; set; }
+        public int Mpeg4Width { get; init; }
 
         /// <summary>
         /// Optional. Video height
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Mpeg4Height { get; set; }
+        public int Mpeg4Height { get; init; }
 
         /// <summary>
         /// Optional. Duration of the Video
         /// </summary>
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Mpeg4Duration { get; set; }
+        public int Mpeg4Duration { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]

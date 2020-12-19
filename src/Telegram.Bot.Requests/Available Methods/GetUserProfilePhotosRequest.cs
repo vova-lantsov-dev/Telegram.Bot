@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Get a list of profile pictures for a user
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record GetUserProfilePhotosRequest : RequestBase<UserProfilePhotos>
+    public sealed partial record GetUserProfilePhotosRequest : RequestBase<UserProfilePhotos>
     {
         /// <summary>
         /// Unique identifier of the target user

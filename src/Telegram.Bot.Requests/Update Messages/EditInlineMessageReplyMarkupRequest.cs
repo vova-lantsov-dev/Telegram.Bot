@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Edit only the reply markup of messages sent via the bot. On success the edited True is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record EditInlineMessageReplyMarkupRequest : RequestBase<bool>,
+    public sealed partial record EditInlineMessageReplyMarkupRequest : RequestBase<bool>,
                                                        IInlineMessage,
                                                        IInlineReplyMarkupMessage
     {

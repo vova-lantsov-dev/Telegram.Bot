@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Base Class for inline results send in response to an <see cref="InlineQuery"/>
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public abstract record InlineQueryResultBase
+    public abstract partial record InlineQueryResultBase
     {
         /// <summary>
         /// Unique identifier of this result

@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types
     /// This object contains information about one member of the chat.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record ChatMember
+    public sealed partial record ChatMember
     {
         /// <summary>
         /// Information about the user

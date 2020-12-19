@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Get the number of members in a chat
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record GetChatMembersCountRequest : RequestBase<int>
+    public sealed partial record GetChatMembersCountRequest : RequestBase<int>
     {
         /// <summary>
         /// Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)

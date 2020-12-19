@@ -13,7 +13,7 @@ namespace Telegram.Bot.Requests
     /// </summary>
     /// <typeparam name="TResponse">Type of result expected in result</typeparam>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public abstract record FileRequestBase<TResponse> : RequestBase<TResponse>
+    public abstract partial record FileRequestBase<TResponse> : RequestBase<TResponse>
     {
         /// <summary>
         /// Initializes an instance of request

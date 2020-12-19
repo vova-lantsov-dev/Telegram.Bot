@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types
     /// This object represents the content of a media message to be sent
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public abstract record InputMediaBase : IInputMedia
+    public abstract partial record InputMediaBase : IInputMedia
     {
         /// <summary>
         /// Type of the media

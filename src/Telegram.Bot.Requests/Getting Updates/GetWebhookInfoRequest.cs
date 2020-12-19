@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Get current webhook status.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record GetWebhookInfoRequest : ParameterlessRequest<WebhookInfo>
+    public sealed partial record GetWebhookInfoRequest : ParameterlessRequest<WebhookInfo>
     {
         /// <summary>
         /// Initializes a new request

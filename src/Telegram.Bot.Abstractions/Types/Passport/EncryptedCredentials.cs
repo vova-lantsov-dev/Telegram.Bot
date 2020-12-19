@@ -9,7 +9,7 @@ namespace Telegram.Bot.Types.Passport
     /// Documentation</see> for a complete description of the data decryption and authentication processes.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record EncryptedCredentials
+    public sealed partial record EncryptedCredentials
     {
         /// <summary>
         /// Base64-encoded encrypted JSON-serialized data with unique user's payload, data hashes and secrets

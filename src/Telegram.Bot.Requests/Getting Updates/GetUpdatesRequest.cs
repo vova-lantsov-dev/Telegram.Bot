@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Receive incoming updates using long polling. An Array of <see cref="Update" /> objects is returned.
     /// </summary>
     //[JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record GetUpdatesRequest : RequestBase<Update[]>
+    public sealed partial record GetUpdatesRequest : RequestBase<Update[]>
     {
         /// <summary>
         /// Identifier of the first update to be returned

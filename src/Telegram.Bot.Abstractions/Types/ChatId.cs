@@ -4,7 +4,7 @@
     /// Represents a ChatId
     /// </summary>
     //[JsonConverter(typeof(ChatIdConverter))]
-    public sealed record ChatId
+    public sealed partial record ChatId
     {
         /// <summary>
         /// Unique identifier for the chat

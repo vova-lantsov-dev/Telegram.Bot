@@ -10,7 +10,7 @@ namespace Telegram.Bot.Requests
     /// Edit text and game messages sent by the bot. On success the edited <see cref="Message"/> is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record EditMessageTextRequest : RequestBase<Message>,
+    public sealed partial record EditMessageTextRequest : RequestBase<Message>,
                                           IFormattableMessage,
                                           IInlineReplyMarkupMessage
     {

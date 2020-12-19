@@ -5,7 +5,7 @@
     /// </summary>
     /// <seealso href="https://core.telegram.org/bots/api#invoice"/>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record Invoice
+    public sealed partial record Invoice
     {
         /// <summary>
         /// Product name

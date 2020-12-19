@@ -8,7 +8,7 @@ namespace Telegram.Bot.Requests
     /// Use this method to change the list of the bot's commands. Returns True on success.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SetMyCommandsRequest : RequestBase<bool>
+    public sealed partial record SetMyCommandsRequest : RequestBase<bool>
     {
         /// <summary>
         /// A list of bot commands to be set as the list of the bot's commands. At most 100 commands can be specified.

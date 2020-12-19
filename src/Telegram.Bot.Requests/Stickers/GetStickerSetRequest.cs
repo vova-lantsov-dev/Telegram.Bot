@@ -7,7 +7,7 @@ namespace Telegram.Bot.Requests
     /// Get a sticker set. On success, a <see cref="StickerSet"/> object is returned.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record GetStickerSetRequest : RequestBase<StickerSet>
+    public sealed partial record GetStickerSetRequest : RequestBase<StickerSet>
     {
         /// <summary>
         /// Name of the sticker set

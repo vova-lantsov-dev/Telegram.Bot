@@ -4,7 +4,7 @@
     /// This object represents information about an order.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record OrderInfo
+    public sealed partial record OrderInfo
     {
         /// <summary>
         /// Optional. User name

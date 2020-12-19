@@ -14,7 +14,7 @@ namespace Telegram.Bot.Requests
     /// up to 50 MB in size, this limit may be changed in the future.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SendAnimationRequest : FileRequestBase<Message>,
+    public sealed partial record SendAnimationRequest : FileRequestBase<Message>,
                                         IChatMessage,
                                         INotifiableMessage,
                                         IReplyMessage,

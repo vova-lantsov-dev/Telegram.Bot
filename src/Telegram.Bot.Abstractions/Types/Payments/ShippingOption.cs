@@ -4,7 +4,7 @@
     /// This object represents one shipping option.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record ShippingOption
+    public sealed partial record ShippingOption
     {
         /// <summary>
         /// Shipping option identifier

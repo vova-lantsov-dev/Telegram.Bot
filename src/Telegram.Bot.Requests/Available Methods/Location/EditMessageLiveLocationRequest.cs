@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Edit live location messages sent by the bot
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record EditMessageLiveLocationRequest : RequestBase<Message>,
+    public sealed partial record EditMessageLiveLocationRequest : RequestBase<Message>,
                                                   IInlineReplyMarkupMessage
     {
         /// <summary>

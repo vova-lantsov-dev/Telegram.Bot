@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents a venue.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record Venue
+    public sealed partial record Venue
     {
         /// <summary>
         /// Venue location

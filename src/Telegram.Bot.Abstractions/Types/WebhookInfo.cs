@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types
     /// Contains information about the current status of a webhook.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record WebhookInfo
+    public sealed partial record WebhookInfo
     {
         /// <summary>
         /// Webhook URL, may be empty if webhook is not set up

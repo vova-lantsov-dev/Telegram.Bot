@@ -13,7 +13,7 @@ namespace Telegram.Bot.Requests
     /// Send documents
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SendDocumentRequest : FileRequestBase<Message>,
+    public sealed partial record SendDocumentRequest : FileRequestBase<Message>,
                                        INotifiableMessage,
                                        IReplyMessage,
                                        IReplyMarkupMessage<IReplyMarkup>,

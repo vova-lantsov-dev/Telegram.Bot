@@ -7,7 +7,7 @@
     /// This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them.
     /// </remarks>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record InputLocationMessageContent : InputMessageContentBase
+    public sealed partial record InputLocationMessageContent : InputMessageContentBase
     {
         /// <summary>
         /// Latitude of the location in degrees

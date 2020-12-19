@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents one row of the high scores table for a game.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record GameHighScore
+    public sealed partial record GameHighScore
     {
         /// <summary>
         /// Position in high score table for the game.

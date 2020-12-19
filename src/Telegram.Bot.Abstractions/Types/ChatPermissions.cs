@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// Describes actions that a non-administrator user is allowed to take in a chat.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record ChatPermissions
+    public sealed partial record ChatPermissions
     {
         /// <summary>
         /// Optional. True, if the user is allowed to send text messages, contacts, locations and venues

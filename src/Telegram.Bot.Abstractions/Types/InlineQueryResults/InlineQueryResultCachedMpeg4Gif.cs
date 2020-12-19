@@ -7,7 +7,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
     /// Represents a link to a video animation (H.264/MPEG-4 AVC video without sound) stored on the Telegram servers. By default, this animated MPEG-4 file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record InlineQueryResultCachedMpeg4Gif : InlineQueryResultBase,
+    public sealed partial record InlineQueryResultCachedMpeg4Gif : InlineQueryResultBase,
                                                    ICaptionInlineQueryResult,
                                                    ITitleInlineQueryResult,
                                                    IInputMessageContentResult
@@ -16,7 +16,7 @@ namespace Telegram.Bot.Types.InlineQueryResults
         /// A valid file identifier for the MP4 file
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
-        public string Mpeg4FileId { get; set; }
+        public string Mpeg4FileId { get; init; }
 
         /// <inheritdoc />
         //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]

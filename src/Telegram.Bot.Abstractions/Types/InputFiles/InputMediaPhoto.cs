@@ -6,7 +6,7 @@ namespace Telegram.Bot.Types
     /// <summary>
     /// Represents a photo to be sent
     /// </summary>
-    public sealed record InputMediaPhoto : InputMediaBase, IAlbumInputMedia
+    public sealed partial record InputMediaPhoto : InputMediaBase, IAlbumInputMedia
     {
         /// <summary>
         /// Initializes a new photo media to send

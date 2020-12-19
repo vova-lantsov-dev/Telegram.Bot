@@ -9,7 +9,7 @@ namespace Telegram.Bot.Requests
     /// Send phone contacts
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record SendContactRequest : RequestBase<Message>,
+    public sealed partial record SendContactRequest : RequestBase<Message>,
                                       INotifiableMessage,
                                       IReplyMessage,
                                       IReplyMarkupMessage<IReplyMarkup>

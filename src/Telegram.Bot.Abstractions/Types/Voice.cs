@@ -4,7 +4,7 @@
     /// This object represents a voice note.
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record Voice : FileBase
+    public sealed partial record Voice : FileBase
     {
         /// <summary>
         /// Duration of the audio in seconds as defined by sender

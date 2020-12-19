@@ -4,7 +4,7 @@ namespace Telegram.Bot.Types
     /// This object represents a parameter of the inline keyboard button used to automatically authorize a user
     /// </summary>
     //[JsonObject(MemberSerialization.OptIn, NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public sealed record LoginUrl
+    public sealed partial record LoginUrl
     {
         /// <summary>
         /// An HTTP URL to be opened with user authorization data added to the query string when the button is pressed
