@@ -10,4 +10,10 @@
     <ProjectReference Include="..\Telegram.Bot.Abstractions\Telegram.Bot.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Telegram.Bot.Generators\Telegram.Bot.Generators.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
 </Project>
