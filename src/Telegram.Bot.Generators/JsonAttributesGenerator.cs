@@ -106,7 +106,7 @@ namespace {0}
                     }
 
                     // declare the variables for GetPlaceholder method
-                    string namespaceName = type.ContainingNamespace?.Name;
+                    string namespaceName = type.ContainingNamespace.ToString();
                     string className = type.Name;
                     string content = string.Join(NewLinePlaceholder, properties);
 
