@@ -20,7 +20,7 @@ using System.Text.Json.Serialization;
 namespace {0}
 {{
     [MetadataType(typeof({1}Metadata))]
-    partial class {1}
+    partial record {1}
     {{
         internal sealed class {1}Metadata
         {{
