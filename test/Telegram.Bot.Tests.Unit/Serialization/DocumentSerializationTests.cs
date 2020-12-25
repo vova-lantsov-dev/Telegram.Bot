@@ -1,5 +1,6 @@
 using System;
 using System.Text.Json;
+using Telegram.Bot.Converters;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Xunit;
@@ -121,7 +122,13 @@ namespace Telegram.Bot.Tests.Unit.Serialization
             }
             ";
 
-            var message = JsonSerializer.Deserialize<Message>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web));
+            var message = JsonSerializer.Deserialize<Message>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web)
+            {
+                Converters =
+                {
+                    new UnixDateConverter()
+                }
+            });
 
             Assert.Equal(MessageType.Document, message.Type);
             Assert.Equal("test_file.txt", message.Document.FileName);

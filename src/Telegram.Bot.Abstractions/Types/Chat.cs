@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.Json.Serialization;
+using Telegram.Bot.Converters;
 using Telegram.Bot.Types.Enums;
 
 namespace Telegram.Bot.Types
@@ -19,6 +21,7 @@ namespace Telegram.Bot.Types
         /// Type of chat
         /// </summary>
         //[JsonProperty(Required = Required.Always)]
+        [JsonConverter(typeof(JsonStringSnakeCaseEnumConverter))]
         public ChatType Type { get; init; }
 
         /// <summary>
