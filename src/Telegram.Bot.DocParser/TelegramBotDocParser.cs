@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Net;
+using System.Text.Encodings.Web;
+using System.Text.RegularExpressions;
+using System.Web;
 using HtmlAgilityPack;
 using Telegram.Bot.DocParser.Exceptions;
 
@@ -31,13 +34,13 @@ namespace Telegram.Bot.DocParser
             HtmlNodeCollection types = doc.DocumentNode.SelectNodes("//h4");
             foreach (HtmlNode typeNameNode in types)
             {
-                HtmlNode typeDescriptionNode = typeNameNode.NextSibling;
+                HtmlNode typeDescriptionNode = GetNextSibling(typeNameNode);
                 try
                 {
                     var botApiType = new BotApiType
                     {
                         TypeName = typeNameNode.GetDirectInnerText(),
-                        TypeDescription = typeDescriptionNode.InnerText,
+                        TypeDescription = DecodeDescription(typeDescriptionNode.InnerText),
                         Parameters = GetParametersForType(typeDescriptionNode)
                     };
                     _types.Add(botApiType);
@@ -54,13 +57,13 @@ namespace Telegram.Bot.DocParser
         private static List<BotApiTypeParameter> GetParametersForType(HtmlNode typeDescriptionNode)
         {
             List<BotApiTypeParameter> parameters = new();
-            HtmlNode parametersTableNode = typeDescriptionNode.NextSibling;
+            HtmlNode parametersTableNode = GetNextSibling(typeDescriptionNode);
 
-            foreach (HtmlNode tr in parametersTableNode.SelectSingleNode("./tbody").ChildNodes)
+            foreach (HtmlNode tr in parametersTableNode.SelectSingleNode("./tbody").ChildNodes.Where(n => n.InnerText != "\n"))
             {
-                HtmlNodeCollection tds = tr.ChildNodes;
+                var tds = tr.ChildNodes.Where(n => n.InnerText != "\n").ToArray();
 
-                if (tds.Count != 3)
+                if (tds.Length != 3)
                 {
                     // This entry is not a type, but a method description
                     throw new WrongTypeSignatureException();
@@ -74,7 +77,7 @@ namespace Telegram.Bot.DocParser
                 {
                     ParameterName = parameterName.InnerText,
                     ParameterTypeName = GetDotNetTypeName(parameterType.InnerText),
-                    ParameterDescription = parameterDescription.InnerText,
+                    ParameterDescription = DecodeDescription(parameterDescription.InnerText),
                     IsEnum = false
                 };
                 parameters.Add(botApiTypeParameter);
@@ -97,6 +100,24 @@ namespace Telegram.Bot.DocParser
                 { } value => $"Telegram.Bot.Types.{value}",
                 _ => throw new NotSupportedException()
             };
+        }
+
+        private static HtmlNode GetNextSibling(HtmlNode node)
+        {
+            HtmlNode sibling = node.NextSibling;
+            while (sibling.OuterHtml == "\n")
+            {
+                sibling = sibling.NextSibling;
+            }
+
+            return sibling;
+        }
+
+        private static string DecodeDescription(string description)
+        {
+            string decoded = HttpUtility.HtmlDecode(description);
+            string withNewLines = Regex.Replace(decoded, "\\.([A-Z0-9])", ".\n$1");
+            return withNewLines;
         }
     }
 }
